@@ -1,0 +1,75 @@
+{
+  "PolicyNumber": "string",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "string",
+  "ClaimItems": [
+    {
+      "ItemId": "string",
+      "Note": "string",
+      "Coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "TrackingConsent": true,
+      "TrackingDevice": true,
+      "TrackingDeviceCompany": "string",
+      "PoliceDetails": {
+        "CaseNumber": "string",
+        "Date": "2018-06-26T11:27:28.271Z",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "string",
+          "CellPhone": "string"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "string",
+          "IdentityNumber": "string",
+          "LicenceObtainDate": "2018-06-26T11:27:28.271Z",
+          "LicenceNumber": "string",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "string",
+            "CellPhone": "string"
+          },
+          "Status": "DRUNK",
+          "PersonType": "WITNESS",
+          "PersonId": "string"
+        }
+      ],
+      "RequiredServices": [
+        "HOME"
+      ],
+      "DamagedItems": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string"
+        }
+      ],
+      "CauseCode": "string",
+      "PerilCode": "string",
+      "ItemNumber": "string",
+      "ItemType": "BUILDING",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "2018-06-26T11:27:28.272Z",
+      "IncidentDateAndTime": "2018-06-26T11:27:28.272Z",
+      "ThirdPartyDetails": [
+        {
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "string",
+            "Model": "string",
+            "Year": "string",
+            "Color": "string",
+            "RegistrationNo": "string"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "string"
+        }
+      ]
+    }
+  ]
+}

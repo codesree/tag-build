@@ -1,0 +1,91 @@
+{
+  "ClaimItem": [
+    {
+      "Coordinates": {
+        "Longitude": "-23.8582",
+        "Latitude": "31.5747"
+      },
+      "PoliceDetails": {
+        "CaseNumber": "18008978",
+        "Date": "2018-06-27T07:48:51",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Paul",
+          "IdentityNumber": "9111275066088",
+          "LicenceObtainDate": "2015-06-18T07:56:15",
+          "LicenceNumber": "GP11700",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "fred.testing@test.com",
+            "CellPhone": "0787767654"
+          },
+          "Status": "SOBER",
+          "PersonType": "DRIVER",
+          "PersonId": "4c940a64-7e3b-4cc3-aa83-ed00774504fe"
+        },
+        {
+          "Name": "Srikanth",
+          "IdentityNumber": "9111275066089",
+          "LicenceObtainDate": "2018-06-20T08:15:51",
+          "LicenceNumber": "GP11702",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "srekanth.testing@test.com",
+            "CellPhone": "0787767054"
+          },
+          "Status": "SOBER",
+          "PersonType": "WITNESS",
+          "PersonId": "17520378-7bd5-41cd-a493-89aa7c23e6df"
+        }
+      ],
+      "DamagedItems": [
+        {
+          "Id": "0b425105-0f36-40b8-a767-07405b2e4e95",
+          "Name": "Crash",
+          "Description": "Boot"
+        },
+        {
+          "Id": "ebb8b5e6-f72a-4d59-bae2-8dfdbfdd66ba",
+          "Name": "Crash",
+          "Description": "Back Wheel"
+        },
+        {
+          "Id": "86d69426-af6b-47ca-afa7-8a0ce2d1fa1d",
+          "Name": "Crash",
+          "Description": "Slide window"
+        }
+      ],
+      "ThirdPartyDetails": [],
+      "ClaimItemId": "03963e65-e6f9-43c4-ac4c-75849a396330",
+      "Note": "Registering a claim for collision with animal at Paul Krugers gate at 9:00 am jun 27,2018",
+      "TrackingConsent": false,
+      "TrackingDevice": false,
+      "TrackingDeviceCompany": null,
+      "RequiredServices": null,
+      "CauseCode": "Collision with Animal",
+      "PerilCode": "Accident Damage",
+      "ItemNumber": null,
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "0001-01-01T00:00:00",
+      "IncidentDateAndTime": "2018-06-27T07:48:51"
+    }
+  ],
+  "PolicyNumber": "SHL000009053",
+  "ClaimStatus": "INPROGRESS",
+  "ClaimKey": "SHL2018-000281",
+  "ClearanceCode": "SHL2018-281",
+  "Excess": "3000",
+  "AdditionalExcess": null,
+  "ReinsuranceExcess": null,
+  "VolExcess": "1000",
+  "TotalExcess": null,
+  "TimeStamp": "2018-06-27T14:57:20.9765651+02:00"
+}

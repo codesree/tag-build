@@ -1,0 +1,89 @@
+{
+  "PolicyNumber": "SHL000009053",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "string",
+  "ClaimItems": [
+    {
+      "ItemId": "941bec8f-89f7-4e7b-bb6f-590eb3c224fe",
+      "Note": "Registering a claim for an accident at N1 at 9:00 am jun 26,2018",
+      "Coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "TrackingConsent": true,
+      "TrackingDevice": true,
+      "TrackingDeviceCompany": "string",
+      "PoliceDetails": {
+        "CaseNumber": "18908978",
+        "Date": "2018-06-26T07:48:51.758Z",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Delle",
+          "IdentityNumber": "string",
+          "LicenceObtainDate": "2018-06-26T07:48:51.758Z",
+          "LicenceNumber": "string",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "delle.testing@test.com",
+            "CellPhone": "0787767654"
+          },
+          "Status": "DRUNK",
+          "PersonType": "WITNESS",
+          "PersonId": "99048f98-67b5-489a-94e9-c65a326e7542"
+        }
+      ],
+      "RequiredServices": [
+        "HOME"
+      ],
+      "DamagedItems": [
+        {
+          "Name": "Boot",
+          "Description": "Crash",
+          "Id": "0b534614-f750-43ac-80e0-1e2a834ebc7b"
+        }
+      ],
+      "CauseCode": "Multiple Vehicle Pile Up",
+      "PerilCode": "Accident Damage",
+      "ItemNumber": "string",
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "2018-06-26T07:48:51.759Z",
+      "IncidentDateAndTime": "2018-06-26T07:48:51.759Z",
+      "ThirdPartyDetails": [
+        {
+               "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "Blue",
+            "RegistrationNo": "987321"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "99048f98-67b5-489a-94e9-c65a326e7542"
+        }
+      ]
+    }
+  ]
+}
+
+{
+  "ClaimNumber": "SHL2018-000280",
+  "ClearanceCode": "SHL2018-280",
+  "Excess": "3000",
+  "AdditionalExcess": null,
+  "ReinsuranceExcess": null,
+  "VolExcess": "1000",
+  "TotalExcess": null,
+  "TimeStamp": "2018-06-27T09:54:55.2082578+02:00",
+  "bSuccess": true,
+  "ErrorMessage": null,
+  "ErrorCode": null
+}

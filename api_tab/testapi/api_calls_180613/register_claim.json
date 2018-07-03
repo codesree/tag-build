@@ -1,0 +1,93 @@
+{
+  "PolicyNumber": "SHL000009043",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "string",
+  "ClaimItems": [
+    {
+      "Note": "Registering the Claim for an accident at M1 North at 13:00 today Jun 13,2018",
+      "Coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "TrackingConsent": true,
+      "TrackingDevice": true,
+      "TrackingDeviceCompany": "string",
+      "PoliceDetails": {
+        "CaseNumber": "12518613",
+        "Date": "2018-06-13T07:08:01.351Z",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Priyal",
+          "ClaimNumber": "string",
+          "IdentityNumber": "9505255066088",
+          "LicenceObtainDate": "2018-06-11T07:08:01.351Z",
+          "LicenceNumber": "67435GHFJD788990",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "priyal.testing@test.com",
+            "CellPhone": "0878874878"
+            },
+          "Status": "DRUNK",
+          "PersonType": "DRIVER",
+          "PersonId": "e0995141-fad6-4f73-830b-6924208eab89"
+        }
+      ],
+      "RequiredServices": [
+        "HOME"
+      ],
+      "DamagedItems": [
+        {
+          "Name": "Bonnet",
+          "Description": "Crash",
+          "Id": "23e33a40-eedb-4746-b53a-6411491bc151"
+        }
+      ],
+      "CauseCode": "string",
+      "PerilCode": "string",
+      "ItemNumber": "string",
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "2018-06-13T07:08:01.352Z",
+      "IncidentDateAndTime": "2018-06-13T07:08:01.352Z",
+      "ThirdPartyDetails": [
+        {
+          "ThirdPartyDetailsId": "92e60929-2e81-42d0-ae59-622ca829a06a",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+        }
+      ]
+    }
+  ]
+}
+
+RESPONSE------------------------------------------------------------------------------
+
+{
+  "ClaimNumber": "SHL2018-000211",
+  "ClearanceCode": "SHL2018-211",
+  "Excess": "3000",
+  "AdditionalExcess": "1000",
+  "ReinsuranceExcess": null,
+  "VolExcess": null,
+  "TotalExcess": null,
+  "TimeStamp": "0001-01-01T00:00:00",
+  "bSuccess": false,
+  "ErrorMessage": null,
+  "ErrorCode": null
+}
+

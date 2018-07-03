@@ -1,0 +1,80 @@
+{
+  "ClaimItem": [
+    {
+      "Coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "PoliceDetails": {
+        "CaseNumber": "18908978",
+        "Date": "2018-06-26T07:48:51",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Delle",
+          "IdentityNumber": "string",
+          "LicenceObtainDate": "2018-06-26T07:48:51",
+          "LicenceNumber": "string",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "delle.testing@test.com",
+            "CellPhone": "0787767654"
+          },
+          "Status": "DRUNK",
+          "PersonType": "WITNESS",
+          "PersonId": "99048f98-67b5-489a-94e9-c65a326e7542"
+        }
+      ],
+      "DamagedItems": [
+        {
+          "Id": "0b534614-f750-43ac-80e0-1e2a834ebc7b",
+          "Name": "Crash",
+          "Description": "Boot"
+        }
+      ],
+      "ThirdPartyDetails": [
+        {
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "Blue",
+            "RegistrationNo": "987321"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "99048f98-67b5-489a-94e9-c65a326e7542"
+        }
+      ],
+      "ClaimItemId": "941bec8f-89f7-4e7b-bb6f-590eb3c224fe",
+      "Note": "Registering a claim for an accident at N1 at 9:00 am jun 26,2018",
+      "TrackingConsent": false,
+      "TrackingDevice": false,
+      "TrackingDeviceCompany": null,
+      "RequiredServices": null,
+      "CauseCode": "Multiple Vehicle Pile Up",
+      "PerilCode": "Accident Damage",
+      "ItemNumber": null,
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "0001-01-01T00:00:00",
+      "IncidentDateAndTime": "2018-06-26T07:48:51"
+    }
+  ],
+  "PolicyNumber": "SHL000009053",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "SHL2018-000280",
+  "ClearanceCode": "SHL2018-280",
+  "Excess": "3000",
+  "AdditionalExcess": null,
+  "ReinsuranceExcess": null,
+  "VolExcess": "1000",
+  "TotalExcess": null,
+  "TimeStamp": "2018-06-27T11:10:43.2057364+02:00"
+}

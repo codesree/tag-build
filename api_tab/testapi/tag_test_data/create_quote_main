@@ -1,0 +1,194 @@
+{
+  "RequestType": "C",
+  "QuoteNumber": "string",
+  "Persons": [
+    {
+      "PersonID": "00000000-0000-0000-0000-000000000000",
+      "BankingIDS": [
+        "00000000-0000-0000-0000-000000000000"
+      ],
+      "ContactIDS": [
+        "00000000-0000-0000-0000-000000000000"
+      ],
+      "AddressIDS": [
+        "00000000-0000-0000-0000-000000000000"
+      ],
+      "FirstName": "string",
+      "Surname": "string",
+      "Initials": "string",
+      "Title": "NOTITLE",
+      "Gender": "MALE",
+      "DOB": "2018-06-29T12:09:53.596Z",
+      "IdentityDocumentType": "SAIDENTITYDOCUMENT",
+      "ClientIDNo": "string",
+      "Age": 0,
+      "MaritalStatus": "SINGLE",
+      "Pensioner": true,
+      "CommunicationMethod": "EMAIL",
+      "LicenseType": "LEARNERS",
+      "LicenceCode": "A",
+      "LicenceDateObtained": "2018-06-29T12:09:53.596Z",
+      "InsuranceDeclinedPreviously": true,
+      "Judgement": true,
+      "FraudCriminalOffence": true,
+      "POPIConsentIndicator": true,
+      "MarketingConsentIndicator": true,
+      "PolicyHolderIndicator": true,
+      "DriverTests": [
+        {
+          "DriverTestID": "00000000-0000-0000-0000-000000000000",
+          "DriverPass": true,
+          "DriverTestDate": "2018-06-29T12:09:53.597Z",
+          "DriverTestExpiryDate": "2018-06-29T12:09:53.597Z"
+        }
+      ]
+    }
+  ],
+  "QuoteDetails": {
+    "Vehicle": [
+      {
+        "VehicleID": "00000000-0000-0000-0000-000000000000",
+        "Make": "string",
+        "Model": "string",
+        "MMCode": "string",
+        "Year": 0,
+        "SumInsured": "string",
+        "EngineNo": "string",
+        "VINNo": "string",
+        "VehicleLicenseDiskNumber": "string",
+        "VehicleRegisterNumber": "string",
+        "LicensePlateNumber": "string",
+        "Colour": "string",
+        "ExcessWaiver": true,
+        "Financed": true,
+        "LoanAmount": 0,
+        "VoluntaryExcess": 0,
+        "CoverOption": "MARKET",
+        "AlarmType": "OTHER",
+        "hasImmobiliser": true,
+        "VehicleRebuilt": true,
+        "Cover": "COMPREHENSIVE",
+        "Usage": "BUSINESSREPRESENTATIVE",
+        "CarHireOption": "CLASSA",
+        "NewVehicle": true,
+        "HasTrackingDevice": true,
+        "ParkedOvernight": "UNKNOWN",
+        "CoverEffectiveDate": "2018-06-29T12:09:53.597Z",
+        "MotorAccessories": [
+          {
+            "AccessoryID": "00000000-0000-0000-0000-000000000000",
+            "AccessoryType": "ABSBRAKES",
+            "AccessoryOtherDesc": "string",
+            "SumInsured": 0
+          }
+        ],
+        "ClaimsHistory": {
+          "NoOfClaims0to12": 0,
+          "NoOfClaims13to24": 0,
+          "NoOfClaims25to36": 0
+        },
+        "Parking": {
+          "DayParkingAddressID": "00000000-0000-0000-0000-000000000000",
+          "NightParkingAddressID": "00000000-0000-0000-0000-000000000000"
+        },
+        "Drivers": [
+          {
+            "PersonID": "00000000-0000-0000-0000-000000000000",
+            "DriverType": "PRIMARY"
+          }
+        ],
+        "DigitalInspections": [
+          {
+            "DigitalInspectionID": "00000000-0000-0000-0000-000000000000",
+            "InspectionDecision": "string",
+            "InspectionType": "PGGlass",
+            "InspectionDate": "2018-06-29T12:09:53.598Z",
+            "InspectionLocation": "string",
+            "Longitude": "string",
+            "Latitude": "string",
+            "DamagedItems": [
+              {
+                "DamagedItemID": "00000000-0000-0000-0000-000000000000",
+                "DamagedItemType": "string",
+                "Description": "string"
+              }
+            ]
+          }
+        ],
+        "ItemPremiums": [
+          {
+            "ItemID": "string",
+            "PremiumType": "string",
+            "Premium": 0,
+            "PremiumDue": "string",
+            "Excess": "string",
+            "SumInsured": "string",
+            "Sasria": "string",
+            "SasriaVat": "string",
+            "SasriaCommission": "string",
+            "CommissionAmount": "string",
+            "VATAmount": "string",
+            "ReferralIndicator": true,
+            "ReferralReason": "string",
+            "DeclineIndicator": true,
+            "DeclineReason": "string",
+            "DiscountType": "string",
+            "DiscountAmount": "string",
+            "DiscountLoading": "string",
+            "InspectionRequired": true
+          }
+        ]
+      }
+    ]
+  },
+  "ITCDetails": {
+    "ITCConsent": true,
+    "ITCEffectiveDate": "2018-06-29T12:09:53.598Z",
+    "ITCLapse": 0,
+    "ITCLoss": 0,
+    "ITCScore": 0,
+    "ITCLapseBand": "string",
+    "ITCLossBand": "string",
+    "ITCVersion": 0
+  },
+  "Contacts": [
+    {
+      "ContactID": "00000000-0000-0000-0000-000000000000",
+      "ContactType": "MOBILENO",
+      "Text": "string"
+    }
+  ],
+  "BankingDetails": [
+    {
+      "BankingID": "00000000-0000-0000-0000-000000000000",
+      "AccountNumber": "string",
+      "AccountHolderName": "string",
+      "AccountHolderSurname": "string",
+      "AccountHolderInitials": "string",
+      "AccountHolderIDNumber": "string",
+      "AccountHolderBranchCode": "string",
+      "AccountType": "CHEQUE",
+      "AVSDone": true,
+      "AVSResponse": "string"
+    }
+  ],
+  "Addressses": [
+    {
+      "AddressID": "00000000-0000-0000-0000-000000000000",
+      "AddressType": "POSTALADDRESS",
+      "RiskAddLine1": "string",
+      "RiskAddLine2": "string",
+      "RiskAddLine3": "string",
+      "RiskAddLine4": "string",
+      "RiskPostCode": "string",
+      "Province": "string",
+      "StreetNum": 0
+    }
+  ],
+  "FAAgreementNumber": "string",
+  "SRSID": "string",
+  "ConsultantCode": "string",
+  "SystemID": "string",
+  "SystemUserID": "string",
+  "CompanyID": "string"
+}

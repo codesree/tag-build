@@ -1,0 +1,89 @@
+"SHL2018/000206"
+
+RESPONSE ---------------------------------------------------------
+{
+  "ClaimItem": [
+    {
+      "coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "policeDetails": {
+        "CaseNumber": "1256789",
+        "Date": "2018-06-11T07:08:01",
+        "Branch": "string",
+        "InvestigationOfficer": null,
+        "ContactDetails": null
+      },
+      "persons": [
+        {
+          "Name": "Alfred",
+          "IdentityNumber": "9505255066088",
+          "LicenceObtainDate": "2018-06-11T07:08:01",
+          "LicenceNumber": "67435GHFJD788990",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "alfred.testing@test.com",
+            "CellPhone": "0878874878"
+          },
+          "Status": 1,
+          "PersonType": 0,
+          "PersonId": "1747d5c0-f2c5-421c-b506-7c70c700f746"
+        }
+      ],
+      "damagedItems": [
+        {
+          "Name": "Crash",
+          "Description": "Bonnet",
+          "Id": "e09700f9-7317-49be-ad30-8d85490c8496"
+        }
+      ],
+      "thirdPartyDetails": [
+        {
+          "ThirdPartyDetailsId": "17bb3ccb-e7c4-4002-9a9a-667f7d12d6e4",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "1747d5c0-f2c5-421c-b506-7c70c700f746"
+        }
+      ],
+      "claimItemId": "6E6F6FCEB530C23CE0535E14960A6748",
+      "claimKey": "SHL2018/000206",
+      "createUser": "100",
+      "createDate": "2018-06-06T13:54:49",
+      "updateDate": "2018-06-06T13:54:49",
+      "updateUser": 100,
+      "itemSumInsured": 98500,
+      "itemDescription": "2014 HONDA BRIO 1.2 COMFORT",
+      "itemStage": 1,
+      "riskAddressId": "77e32f23-a7e3-4ee7-adbf-aafd412d47f5",
+      "itemGuid": null,
+      "itemVolexcess": 0,
+      "itemCoverEffeciveDate": "2018-05-24T00:00:00",
+      "note": "Registering the Claim for an accident at M1 North at 17:00 yesterday Jun 11,2018",
+      "trackingConsent": false,
+      "trackingDevice": false,
+      "trackingDeviceCompany": null,
+      "requiredServices": null,
+      "causeCode": null,
+      "perilCode": null,
+      "itemNumber": null,
+      "itemType": 1,
+      "itemStatus": 1,
+      "dateAndTime": "0001-01-01T00:00:00",
+      "incidentDateAndTime": "2018-06-11T07:08:01"
+    }
+  ],
+  "PolicyNumber": "SHL000009016",
+  "ClaimStatus": 0,
+  "Claimkey": "SHL2018/000206",
+  "bSuccess": false,
+  "ErrorMessage": null,
+  "ErrorCode": null
+}

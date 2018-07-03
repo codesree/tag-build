@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+        <title>TEST APPLICATION GATEWAY - API GATEWAY for testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css" media="screen">
+#editor {
+    /** Setting height is also important, otherwise editor wont showup**/
+    height: 700px;
+    width: 600px;
+}
+#editor2 {
+    height: 500px;
+    width: 450px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">T A G</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'tab_home' %}">Home</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="{% url 'tab_exe' %}">Beanstalk API</a></li>
+      <li><a href="#">Quote</a></li>
+        <li><a href="#">Policy</a></li>
+        <li><a href="#">Claim</a></li>
+            </ul>
+  </div>
+</nav>
+    </div>
+<br>
+<div class="row">
+ <div class="container">
+ {% block body_block %}
+    <div class="jumbotron">
+        <div class="container">
+
+            <div class="col-sm-4">
+                <img width="200" height="200" src="{% static "images/group-logo-small.svg" %}"/>
+            </div>
+            <div class="col-sm-8">
+                <br><br>
+                <h2 style="font-family:'Century Gothic';color:darkblue">{{ text }}</h2>
+            </div>
+        </div>
+     </div>
+  {% endblock %}
+</div>
+</div>
+
+</body>
+</html>

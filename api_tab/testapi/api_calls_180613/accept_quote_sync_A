@@ -1,0 +1,24 @@
+{
+  "CalculateProRataID": "49dee9e7-b56f-4598-ae48-30163f240ec2",
+  "QuoteNumber": "SHL000009053",
+  "ReferralOverrideIndicator": true,
+  "UnderwriterNotes": "string",
+  "CoverEffectiveDate": "2018-06-18T11:38:35.742Z",
+  "BankingDetails": {
+    "BankingID": "6c000d46-b4f9-4ee5-bb4c-0201108a4c2b",
+    	"AccountNumber": "3084",
+		"AccountHolderName": "M",
+		"AccountHolderSurname": "MOTUPA",
+		"AccountHolderInitials": "SP",
+		"AccountHolderIDNumber": "7809225675088",
+		"AccountHolderBranchCode": "051001",
+		"AccountType": "CHEQUE",
+		"AVSDone": true,
+		"AVSResponse": "string"
+  },
+  "PremiumTypes": "NORMALPREMIUM",
+  "DebitOrderDate": "2018-06-18T11:38:35.743Z",
+  "SystemID": "200",
+  "SystemUserID": "100",
+  "CompanyID": "1"
+}

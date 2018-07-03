@@ -1,0 +1,222 @@
+{
+  "RequestType": "C",
+  "QuoteNumber": "string",
+  "Persons": [
+    {
+      "PersonID": "ae5fe1aa-bcbc-4968-a7f8-f10cb00529ad",
+      "BankingIDS": ["0d20d84d-b6f4-4337-bb61-afcbc54d04ed"],
+	  "ContactIDS": ["d61b6d90-a2ae-4873-8ff6-0850674ade5d"],
+	  "AddressIDS": ["4ee03bee-3826-4bf5-8801-23fe446ba87b"],
+      "FirstName": "Johnson",
+      "Surname": "Pass",
+      "Initials": "JP",
+      "Title": "MR",
+      "Gender": "MALE",
+      "DOB": "1992-11-27T07:56:15.790Z",
+      "IdentityDocumentType": "SAIDENTITYDOCUMENT",
+      "ClientIDNo": "9211275066088",
+      "Age": 26,
+      "MaritalStatus": "SINGLE",
+      "Pensioner": false,
+      "CommunicationMethod": "EMAIL",
+      "LicenseType": "LEARNERS",
+      "LicenceCode": "B",
+      "LicenceDateObtained": "2015-06-11T07:56:15.790Z",
+      "InsuranceDeclinedPreviously": true,
+      "Judgement": false,
+      "FraudCriminalOffence": false,
+      "POPIConsentIndicator": true,
+      "MarketingConsentIndicator": true,
+      "PolicyHolderIndicator": true,
+      "DriverTests": [
+        {
+          "DriverTestID": "552620a9-dc07-4bc0-9289-ee49e0b268a2",
+          "DriverPass": true,
+          "DriverTestDate": "2018-06-12T07:56:15.790Z",
+          "DriverTestExpiryDate": "2018-06-12T07:56:15.790Z"
+        }
+      ]
+    }
+  ],
+  "QuoteDetails": {
+    "Vehicle": [
+      {
+        "VehicleID": "f8f51d30-4ed4-46c1-b62b-3ee8a36c884a",
+	        "Make": "HONDA",
+			"Model": "BRIO 1.2 COMFORT",
+			"MMcode": "",
+			"Year": 2014,
+			"SumInsured": 200000,
+			"EngineNo": "ZXCV1234",
+			"VINNo": "345FFGH789",
+			"VehicleLicenseDiskNumber": "67488GHFJD777990",
+			"VehicleRegisterNumber": "11600",
+			"LicensePlateNumber": "GP88700",
+			"Colour": "Black",
+			"ExcessWaiver": false,
+			"Financed": true,
+			"LoanAmount": 0,
+			"VoluntaryExcess": 1000,
+			"CoverOption": "MARKET",
+			"AlarmType": "FACTORY",
+			"hasImmobiliser": true,
+			"VehicleRebuilt": false,
+			"Cover": "COMPREHENSIVE",
+			"Usage": "BUSINESSREPRESENTATIVE",
+			"CarHireOption": "CLASSA",
+			"NewVehicle": true,
+			"HasTrackingDevice": true,
+			"ParkedOvernight": "INLOCKEDGARAGE",
+			"CoverEffectiveDate": "2018-05-24T08:30:02.707Z",
+        "MotorAccessories": [
+          {
+            "AccessoryID": "dfb2e620-de47-43a0-84dc-18a1db29dd50",
+            "AccessoryType": "ABSBRAKES",
+            "AccessoryOtherDesc": "string",
+            "SumInsured": 0
+          }
+        ],
+        "ClaimsHistory": {
+          "NoOfClaims0to12": 0,
+          "NoOfClaims13to24": 0,
+          "NoOfClaims25to36": 0
+        },
+        "Parking": {
+          "DayParkingAddressID": "4ee03bee-3826-4bf5-8801-23fe446ba87b",
+          "NightParkingAddressID": "4ee03bee-3826-4bf5-8801-23fe446ba87b"
+        },
+        "Drivers": [
+          {
+            "PersonID": "ae5fe1aa-bcbc-4968-a7f8-f10cb00529ad",
+            "DriverType": "PRIMARY"
+          }
+        ],
+        "DigitalInspections": [
+          {
+            "DigitalInspectionID": "4ecc4e6f-d87a-4707-914c-01a514199eff",
+            "InspectionDecision": "string",
+            "InspectionType": "PGGlass",
+            "InspectionDate": "2018-06-01T07:56:15.792Z",
+            "InspectionLocation": "string",
+            "Longitude": "string",
+            "Latitude": "string",
+            "DamagedItems": [
+              {
+                "DamagedItemID": "f34eb8c2-77e4-4f02-b43c-b25da287d75f",
+                "DamagedItemType": "string",
+                "Description": "string"
+              }
+            ]
+          }
+        ],
+        "ItemPremiums": []
+      }
+    ]
+  },
+  "ITCDetails": {
+    "ITCConsent": true,
+    "ITCEffectiveDate": "2018-06-01T07:56:15.795Z",
+    "ITCLapse": 0,
+    "ITCLoss": 0,
+    "ITCScore": 0,
+    "ITCLapseBand": "string",
+    "ITCLossBand": "string",
+    "ITCVersion": 0
+  },
+  "Contacts": [
+    {
+      "ContactID": "d61b6d90-a2ae-4873-8ff6-0850674ade5d",
+      "ContactType": "MOBILENO",
+      "Text": "0656778769"
+    }
+  ],
+  "BankingDetails": [
+    {
+      "BankingID": "0d20d84d-b6f4-4337-bb61-afcbc54d04ed",
+		"AccountNumber": "3084",
+		"AccountHolderName": "M",
+		"AccountHolderSurname": "MOTUPA",
+		"AccountHolderInitials": "SP",
+		"AccountHolderIDNumber": "7809225675088",
+		"AccountHolderBranchCode": "051001",
+		"AccountType": "CHEQUE",
+		"AVSDone": true,
+		"AVSResponse": "string"
+    }
+  ],
+  "Addressses": [
+    {
+      "AddressID": "4ee03bee-3826-4bf5-8801-23fe446ba87b",
+     	"AddressType": "RISKADDRESS",
+		"RiskAddLine1": "Jan Smuts Road",
+		"RiskAddLine2": "Park Town",
+		"RiskAddLine3": "Johannesburg",
+		"RiskAddLine4": "string",
+		"RiskPostCode": "2057",
+		"Province": "Gauteng",
+		"StreetNum": 6
+    }
+  ],
+  "FAAgreementNumber": "12345",
+  "SRSID": "67589",
+  "ConsultantCode ": "34687",
+  "SystemID": "200",
+  "SystemUserID": "100",
+  "CompanyID": "1"
+}
+
+
+
+
+RESPONSE -------------------------------------------------------------
+
+{
+  "QuoteNumber": "SHL000009043",
+  "Items": [
+    {
+      "ItemID": "f8f51d30-4ed4-46c1-b62b-3ee8a36c884a",
+      "PremiumType": "NORMALPREMIUM",
+      "Premium": 1602.33,
+      "PremiumDue": "1604.35",
+      "Excess": "3000",
+      "SumInsured": "98500.0",
+      "Sasria": "2.02",
+      "SasriaVat": "0.26",
+      "SasriaCommission": "0.25250",
+      "CommissionAmount": "144.2097",
+      "VATAmount": "209",
+      "ReferralIndicator": false,
+      "ReferralReason": null,
+      "DeclineIndicator": false,
+      "DeclineReason": null,
+      "DiscountType": "P",
+      "DiscountAmount": "0.0",
+      "DiscountLoading": "D",
+      "InspectionRequired": false
+    },
+    {
+      "ItemID": "f8f51d30-4ed4-46c1-b62b-3ee8a36c884a",
+      "PremiumType": "DISCOUNTEDPREMIUM",
+      "Premium": 1460.34,
+      "PremiumDue": "1462.36",
+      "Excess": "3000",
+      "SumInsured": "98500.0",
+      "Sasria": "2.02",
+      "SasriaVat": "0.26",
+      "SasriaCommission": "0.25250",
+      "CommissionAmount": "131.4306",
+      "VATAmount": "190.48",
+      "ReferralIndicator": false,
+      "ReferralReason": null,
+      "DeclineIndicator": false,
+      "DeclineReason": null,
+      "DiscountType": "P",
+      "DiscountAmount": "0.0",
+      "DiscountLoading": "D",
+      "InspectionRequired": false
+    }
+  ],
+  "bSuccess": true,
+  "ErrorMessage": "00:00:01.6150051 00:00:03.6557531",
+  "ErrorCode": null
+}

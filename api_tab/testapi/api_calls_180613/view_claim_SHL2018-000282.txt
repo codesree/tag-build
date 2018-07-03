@@ -1,0 +1,86 @@
+{
+  "ClaimItem": [
+    {
+      "Coordinates": {
+        "Longitude": "-23.8582",
+        "Latitude": "31.5747"
+      },
+      "PoliceDetails": {
+        "CaseNumber": "18008989",
+        "Date": "2018-06-27T07:48:51",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Ferninand",
+          "IdentityNumber": "9111275066088",
+          "LicenceObtainDate": "2015-06-18T07:56:15",
+          "LicenceNumber": "GP11700",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "fred.testing@test.com",
+            "CellPhone": "0787767654"
+          },
+          "Status": "SOBER",
+          "PersonType": "DRIVER",
+          "PersonId": "3d1ec7fc-d949-4666-b9a0-0d58faeb18e3"
+        },
+        {
+          "Name": "George",
+          "IdentityNumber": "9111275066089",
+          "LicenceObtainDate": "2018-06-20T08:15:51",
+          "LicenceNumber": "GP11702",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "srekanth.testing@test.com",
+            "CellPhone": "0787767054"
+          },
+          "Status": "SOBER",
+          "PersonType": "WITNESS",
+          "PersonId": "c5a359fe-9061-4655-a4d0-d6007662ad8a"
+        }
+      ],
+      "DamagedItems": [
+        {
+          "Id": "0f4dc48a-5419-4bc2-955d-4800816fe3c7",
+          "Name": "scratch",
+          "Description": "Engine hood"
+        },
+        {
+          "Id": "6163e7a6-a3c8-4a33-8618-fea24ca455fb",
+          "Name": "broken",
+          "Description": "Roof panel"
+        }
+      ],
+      "ThirdPartyDetails": [],
+      "ClaimItemId": "ebaa3742-5691-49b0-b191-95558016edd0",
+      "Note": "Registering a claim for breakages in event of fallen trees at 9:00 am jun 27,2018",
+      "TrackingConsent": false,
+      "TrackingDevice": false,
+      "TrackingDeviceCompany": null,
+      "RequiredServices": null,
+      "CauseCode": "Falling Trees",
+      "PerilCode": "Accident Damage",
+      "ItemNumber": null,
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "0001-01-01T00:00:00",
+      "IncidentDateAndTime": "2018-06-27T07:48:51"
+    }
+  ],
+  "PolicyNumber": "SHL000009053",
+  "ClaimStatus": "PAID",
+  "ClaimKey": "SHL2018-000282",
+  "ClearanceCode": "SHL2018-282",
+  "Excess": "3000",
+  "AdditionalExcess": null,
+  "ReinsuranceExcess": null,
+  "VolExcess": "1000",
+  "TotalExcess": null,
+  "TimeStamp": "2018-06-27T15:00:08.6977992+02:00"
+}

@@ -1,0 +1,18 @@
+{
+  "QuoteNumber": "SHL000009043",
+  "SystemID": "200",
+  "SystemUserID": "100",
+  "CompanyID": "1"
+}
+
+
+RESPONSE-------------------------
+
+{
+  "PolicyNumber": "SHL000009043",
+  "ProRataAmount": null,
+  "Premium": null,
+  "bSuccess": true,
+  "ErrorMessage": " 00:00:00.4399584",
+  "ErrorCode": null
+}

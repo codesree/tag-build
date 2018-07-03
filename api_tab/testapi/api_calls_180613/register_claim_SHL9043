@@ -1,0 +1,75 @@
+{
+  "PolicyNumber": "SHL000009043",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "string",
+  "ClaimItems": [
+    {
+      "Note": "Registering the Claim for an accident at M1 North at 9:00 today Jun 15,2018",
+      "Coordinates": {
+        "Longitude": "string",
+        "Latitude": "string"
+      },
+      "TrackingConsent": true,
+      "TrackingDevice": true,
+      "TrackingDeviceCompany": "string",
+      "PoliceDetails": {
+        "CaseNumber": "12510613",
+        "Date": "2018-06-15T07:08:01.351Z",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Donald",
+          "IdentityNumber": "9401205066088",
+          "LicenceObtainDate": "2018-06-11T07:08:01.351Z",
+          "LicenceNumber": "67435GHFJD788990",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "danald.testing@test.com",
+            "CellPhone": "0878004878"
+            },
+          "Status": "DRUNK",
+          "PersonType": "DRIVER",
+          "PersonId": "bc405da7-582a-4daa-a4e3-2603a4ec1b20"
+        }
+      ],
+      "RequiredServices": [
+        "HOME"
+      ],
+      "DamagedItems": [
+        {
+          "Name": "Bonnet",
+          "Description": "Crash",
+          "Id": "1bae67e1-fd17-4682-b807-e175ce3e3c23"
+        }
+      ],
+      "CauseCode": "string",
+      "PerilCode": "string",
+      "ItemNumber": "string",
+      "ItemType": "MOTOR",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "2018-06-15T07:14:01.352Z",
+      "IncidentDateAndTime": "2018-06-15T14:08:01.352Z",
+      "ThirdPartyDetails": [
+        {
+          "ThirdPartyDetailsId": "caee51d8-7f84-4341-b442-035eb0b1198c",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "Blue",
+            "RegistrationNo": "123321"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "bc405da7-582a-4daa-a4e3-2603a4ec1b20"
+        }
+      ]
+    }
+  ]
+}

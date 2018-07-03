@@ -1,0 +1,166 @@
+  {
+    "RequestType": "C",
+    "QuoteNumber": "string",
+    "Persons": [
+      {
+        "PersonID": "4c940a64-7e3b-4cc3-aa83-ed00774504fe",
+        "BankingIDS": ["6c000d46-b4f9-4ee5-bb4c-0201108a4c2b"],
+        "ContactIDS": ["11b7b2b2-62c3-439a-a029-1a31f8927f33"],
+        "AddressIDS": ["5cc87deb-9012-49ab-bcb8-772b33a47593"],
+        "FirstName": "Paul",
+        "Surname": "henderson",
+        "Initials": "PH",
+        "Title": "MR",
+        "Gender": "MALE",
+        "DOB": "1991-11-27T07:56:15.790Z",
+        "IdentityDocumentType": "SAIDENTITYDOCUMENT",
+        "ClientIDNo": "9111275066088",
+        "Age": 27,
+        "MaritalStatus": "SINGLE",
+        "Pensioner": false,
+        "CommunicationMethod": "EMAIL",
+        "LicenseType": "LEARNERS",
+        "LicenceCode": "B",
+        "LicenceDateObtained": "2015-06-18T07:56:15.790Z",
+        "InsuranceDeclinedPreviously": true,
+        "Judgement": false,
+        "FraudCriminalOffence": false,
+        "POPIConsentIndicator": true,
+        "MarketingConsentIndicator": true,
+        "PolicyHolderIndicator": true,
+        "DriverTests": [
+          {
+            "DriverTestID": "0e42593c-b1cb-4f13-8148-35d8d6c6469e",
+            "DriverPass": true,
+            "DriverTestDate": "2018-06-12T07:56:15.790Z",
+            "DriverTestExpiryDate": "2018-06-12T07:56:15.790Z"
+          }
+        ]
+      }
+    ],
+    "QuoteDetails": {
+      "Vehicle": [
+        {
+          "VehicleID": "2ebd9b24-200a-41b0-921b-c09745bce4f2",
+              "Make": "HONDA",
+              "Model": "BRIO 1.2 COMFORT",
+              "MMcode": "",
+              "Year": 2014,
+              "SumInsured": 200000,
+              "EngineNo": "ZXCV1234",
+              "VINNo": "345FFGH789",
+              "VehicleLicenseDiskNumber": "67488GHFJD777990",
+              "VehicleRegisterNumber": "11500",
+              "LicensePlateNumber": "GP11700",
+              "Colour": "Black",
+              "ExcessWaiver": false,
+              "Financed": true,
+              "LoanAmount": 0,
+              "VoluntaryExcess": 1000,
+              "CoverOption": "MARKET",
+              "AlarmType": "FACTORY",
+              "hasImmobiliser": true,
+              "VehicleRebuilt": false,
+              "Cover": "COMPREHENSIVE",
+              "Usage": "BUSINESSREPRESENTATIVE",
+              "CarHireOption": "CLASSA",
+              "NewVehicle": true,
+              "HasTrackingDevice": true,
+              "ParkedOvernight": "INLOCKEDGARAGE",
+              "CoverEffectiveDate": "2018-05-24T08:30:02.707Z",
+          "MotorAccessories": [
+            {
+              "AccessoryID": "397b2e33-1d3f-487c-b821-6d577417dff6",
+              "AccessoryType": "ABSBRAKES",
+              "AccessoryOtherDesc": "string",
+              "SumInsured": 0
+            }
+          ],
+          "ClaimsHistory": {
+            "NoOfClaims0to12": 0,
+            "NoOfClaims13to24": 0,
+            "NoOfClaims25to36": 0
+          },
+          "Parking": {
+            "DayParkingAddressID": "5cc87deb-9012-49ab-bcb8-772b33a47593",
+            "NightParkingAddressID": "5cc87deb-9012-49ab-bcb8-772b33a47593"
+          },
+          "Drivers": [
+            {
+              "PersonID": "4c940a64-7e3b-4cc3-aa83-ed00774504fe",
+              "DriverType": "PRIMARY"
+            }
+          ],
+          "DigitalInspections": [
+            {
+              "DigitalInspectionID": "94250e45-9708-4d63-bd64-3d35aa79890f",
+              "InspectionDecision": "string",
+              "InspectionType": "PGGlass",
+              "InspectionDate": "2018-06-01T07:56:15.792Z",
+              "InspectionLocation": "string",
+              "Longitude": "string",
+              "Latitude": "string",
+              "DamagedItems": [
+                {
+                  "DamagedItemID": "bdbef8f1-24ab-4075-a040-876fe2e5c9a4",
+                  "DamagedItemType": "string",
+                  "Description": "string"
+                }
+              ]
+            }
+          ],
+          "ItemPremiums": []
+        }
+      ]
+    },
+    "ITCDetails": {
+      "ITCConsent": true,
+      "ITCEffectiveDate": "2018-06-01T07:56:15.795Z",
+      "ITCLapse": 0,
+      "ITCLoss": 0,
+      "ITCScore": 0,
+      "ITCLapseBand": "string",
+      "ITCLossBand": "string",
+      "ITCVersion": 0
+    },
+    "Contacts": [
+      {
+        "ContactID": "11b7b2b2-62c3-439a-a029-1a31f8927f33",
+        "ContactType": "MOBILENO",
+        "Text": "0656778769"
+      }
+    ],
+    "BankingDetails": [
+      {
+        "BankingID": "6c000d46-b4f9-4ee5-bb4c-0201108a4c2b",
+          "AccountNumber": "3084",
+          "AccountHolderName": "M",
+          "AccountHolderSurname": "MOTUPA",
+          "AccountHolderInitials": "SP",
+          "AccountHolderIDNumber": "7809225675088",
+          "AccountHolderBranchCode": "051001",
+          "AccountType": "CHEQUE",
+          "AVSDone": true,
+          "AVSResponse": "string"
+      }
+    ],
+    "Addressses": [
+      {
+        "AddressID": "5cc87deb-9012-49ab-bcb8-772b33a47593",
+          "AddressType": "RISKADDRESS",
+          "RiskAddLine1": "Jan Smuts Road",
+          "RiskAddLine2": "Park Town",
+          "RiskAddLine3": "Johannesburg",
+          "RiskAddLine4": "string",
+          "RiskPostCode": "2057",
+          "Province": "Gauteng",
+          "StreetNum": 6
+      }
+    ],
+    "FAAgreementNumber": "12345",
+    "SRSID": "67589",
+    "ConsultantCode ": "34687",
+    "SystemID": "200",
+    "SystemUserID": "100",
+    "CompanyID": "1"
+  }
