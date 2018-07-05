@@ -8,10 +8,14 @@ import requests
 
 def index(request):
     context_dict = {'text': 'API GATEWAY TESTING CHANNEL - TAG'}
-    return render(request, 'tab_home.html',context_dict)
+    return render(request, 'tag_home.html',context_dict)
 
 
-def exeform(request):
+def beanstalk_home(request):
+    return render(request, 'beanstalk_home.html')
+
+
+def beanstalk_quote(request):
     #reqf_obj = Reqform()
     #respf_obj = Respform()
     global startmon
@@ -51,7 +55,7 @@ def exeform(request):
             incom_post_ctq = True
         else:
             context_dict = {'text': 'API Gateway testing channel - TAG'}
-            return render(request, 'tab_home.html', context_dict)
+            return render(request, 'tag_home.html', context_dict)
         rdata = json.loads(Resp_data)
         print(type(rdata))
         req_bankd = json.loads(api_req)
@@ -69,7 +73,7 @@ def exeform(request):
             startmon = Monprocess('acq')
             acq_dat = startmon.acq_procdata(get_bankd,dispq)
             print("...............INSIDE CREATE PROCESS AND ACCEPT RETURN............................")
-            return render(request, 'tab_exe.html', {
+            return render(request, 'beanstalk_exe.html', {
                                                     'Req_data' : acq_dat,
                                                     'pantit' : 'acq',
                                                     'dispq':dispq,
@@ -81,7 +85,7 @@ def exeform(request):
             startmon = Monprocess('ctp')
             ctp_dat = startmon.ctp_procdata(dispq)
             print("...............INSIDE ACCEPT PROCESS AND CONVERT RETURN............................")
-            return render(request, 'tab_exe.html', {
+            return render(request, 'beanstalk_exe.html', {
                 'Req_data': ctp_dat,
                 'pantit': 'ctp',
                 'dispq': dispq,
@@ -93,7 +97,7 @@ def exeform(request):
             #startmon = Monprocess('ctp')
             #ctp_dat = startmon.ctp_procdata(dispq)
             print("...............INSIDE CONVERT PROCESS PROCESS AND DONE............................")
-            return render(request, 'tab_exe.html', {
+            return render(request, 'beanstalk_exe.html', {
                 'Req_data': '',
                 'pantit': 'ctp',
                 'dispp': dispq,
@@ -102,13 +106,13 @@ def exeform(request):
             })
         else:
             context_dict = {'text': 'API Gateway testing channel - TAG'}
-            return render(request, 'tab_home.html', context_dict)
+            return render(request, 'tag_home.html', context_dict)
 
     else:
         startmon = Monprocess('crq')
         crq_dat = startmon.procdata()
         print("type of create_quote data:",type(crq_dat))
-        return render(request, 'tab_exe.html',
+        return render(request, 'beanstalk_exe.html',
                       {
                           'Req_data': crq_dat,
                           'pantit':'crq'
@@ -148,7 +152,7 @@ def con_gatepro(api_req,request,func):
         return do_resp
     else:
         context_dict = {'text': 'API Gateway testing channel - TAG'}
-        return render(request, 'tab_home.html', context_dict)
+        return render(request, 'tag_home.html', context_dict)
 
 
 

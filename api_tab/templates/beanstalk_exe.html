@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "tab_home.html"  %}
+{% extends "tag_home.html"  %}
   <head>
     <title>Test Access Gateway - API GATEWAY testing</title>
      <meta charset="utf-8">
@@ -16,19 +16,19 @@
 {% load static %}
 {% block body_block %}
 <div class="container">
-       <ul class="nav nav-pills nav-justified">
+       <ul class="nav nav-tabs nav-justified">
            {% if pantit == "crq" %}
-                <li class="active"><a href="#">CREATE QUOTE</a></li>
+                <li class="active"><a href="#">------CREATE QUOTE------</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
            {% elif pantit == "acq" %}
                 <li><a href="#">CREATE QUOTE</a></li>
-                <li class="active"><a href="#">ACCEPT QUOTE</a></li>
+                <li class="active"><a href="#">------ACCEPT QUOTE------</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
            {% elif pantit == "ctp" %}
                 <li><a href="#">CREATE QUOTE</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
-                <li class="active"><a href="#">CONVERT QUOTE TO POLICY</a></li>
+                <li class="active"><a href="#">------CONVERT QUOTE TO POLICY------</a></li>
            {% else %}{% endif %}
         </ul>
         <div class="panel panel-success">

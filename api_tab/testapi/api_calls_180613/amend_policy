@@ -73,8 +73,8 @@
                   "ParkedOvernight": "INLOCKEDGARAGE",
                   "CoverEffectiveDate": "2018-05-24T08:30:02.707Z",
                   "State": "POLICY",
-            "Status": "ACTIVE",
-            "ActionType": "U",
+                  "Status": "ACTIVE",
+                  "ActionType": "U",
 
               "MotorAccessories": [
                 {

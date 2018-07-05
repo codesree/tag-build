@@ -18,7 +18,8 @@ from django.urls import path
 from testapi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tab_home/', views.index, name='tab_home'),
-    path('tab_exe/', views.exeform, name='tab_exe'),
-    path('test_execution', views.exeform, name='test_execution'),
+    path('tag_home/', views.index, name='tag_home'),
+    path('beanstalk_home/', views.beanstalk_home, name='beanstalk_home'),
+    path('beanstalk_api/', views.beanstalk_quote, name='beanstalk_exe'),
+    path('test_execution/', views.beanstalk_quote, name='test_execution'),
 ]
