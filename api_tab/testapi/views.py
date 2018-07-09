@@ -5,7 +5,6 @@ from .mprocess import Monprocess
 import requests
 # Create your views here.
 
-
 def index(request):
     context_dict = {'text': 'API GATEWAY TESTING CHANNEL - TAG'}
     return render(request, 'tag_home.html',context_dict)
@@ -153,6 +152,14 @@ def con_gatepro(api_req,request,func):
     else:
         context_dict = {'text': 'API Gateway testing channel - TAG'}
         return render(request, 'tag_home.html', context_dict)
+
+def beanstalk_policy(request):
+    if request.method == 'POST':
+        return render(request, 'beanstalk_exe2.html')
+    else:
+        startpol
+
+    return render(request, 'beanstalk_exe2.html')
 
 
 

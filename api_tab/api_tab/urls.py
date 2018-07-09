@@ -21,5 +21,6 @@ urlpatterns = [
     path('tag_home/', views.index, name='tag_home'),
     path('beanstalk_home/', views.beanstalk_home, name='beanstalk_home'),
     path('beanstalk_api/', views.beanstalk_quote, name='beanstalk_exe'),
+    path('beanstalk_policy/', views.beanstalk_policy, name='beanstalk_exe2'),
     path('test_execution/', views.beanstalk_quote, name='test_execution'),
 ]
