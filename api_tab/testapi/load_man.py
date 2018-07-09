@@ -3,7 +3,7 @@ import datetime
 
 
 db = MongoClient()
-con = db['learn-mongo']
+con = db['testman']
 
 col = con['policy_tag']
 
