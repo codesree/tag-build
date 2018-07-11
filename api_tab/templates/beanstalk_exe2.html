@@ -15,15 +15,16 @@
       <div class="panel panel-primary">
           <div class="panel-heading"><h4>Beanstalk - Policy API service</h4></div>
           <div class="panel-body">
-                <form>
+                <form method="post" action="{% url 'beanstalk_exe2' %}">
     <div class="form-group">
       <label for="sel1">Select a policy you would like to amend:</label>
-      <select class="form-control" id="sel1">
-        <option>click here to view the Policy list</option>
-        <option>SHL000009053--Status(ACTIVE)-Created by(C24088773)-Creation time(2013-11-18T08:18:31.809)</option>
-        <option>SHL000009053-Status(ACTIVE)-Created by(C24088773)-Creation time(2013-11-18T08:18:31.809)</option>
-        <option>SHL000009053-Status(ACTIVE)-Created by(C24088773)-Creation time(2013-11-18T08:18:31.809)</option>
-        <option>SHL000009053-Status(ACTIVE)-Created by(C24088773)-Creation time(2013-11-18T08:18:31.809)</option>
+      <select class="form-control glyphicon" data-show-icon="true" id="sel1">
+        <option>click here</option>
+        {% for data in polist %}
+          <option value="{{ data.policy_number }}">
+              &#xe022; {{ data.policy_number }} &#xe008; {{data.created_by}} &#xe023; {{data.created_on}}
+        </option>
+        {% endfor %}
       </select>
     </div></form>
           </div>

@@ -1,0 +1,84 @@
+{
+  "PolicyNumber": "SHL000009053",
+  "ClaimStatus": "FNOL",
+  "ClaimKey": "string",
+  "ClaimItems": [
+    {
+      "ItemId": "f8f97893-e457-44bc-b226-ec32e4d2b0ac",
+      "Note": "Registering a claim for an accident at Simmonds street at 9:00 am jul 06,2018",
+      "Coordinates": {
+        "Longitude": "28.039238",
+        "Latitude": "-26.210195"
+      },
+      "TrackingConsent": true,
+      "TrackingDevice": true,
+      "TrackingDeviceCompany": "string",
+      "PoliceDetails": {
+       "CaseNumber": "18908978",
+        "Date": "2018-07-06T07:48:51.758Z",
+        "Branch": "string",
+        "InvestigationOfficer": "string",
+        "ContactDetails": {
+          "Email": "alfred.police@test.co.za",
+          "CellPhone": "0878876765"
+        }
+      },
+      "Persons": [
+        {
+          "Name": "Delle",
+          "IdentityNumber": "string",
+          "LicenceObtainDate": "2018-06-26T07:48:51.758Z",
+          "LicenceNumber": "string",
+          "ConsentFromPolicyHolder": "string",
+          "ContactDetails": {
+            "Email": "delle.testing@test.com",
+            "CellPhone": "0787767654"
+          },
+          "Status": "DRUNK",
+          "PersonType": "WITNESS",
+          "PersonId": "8a5a9efe-23c9-402f-9bce-0063749f644f"
+        }
+      ],
+      "RequiredServices": [
+        "HOME"
+      ],
+      "DamagedItems": [
+        {
+          "Id": "e9848afe-0761-402c-96c2-0209de041c14",
+          "Name": "Boot",
+          "Description": "Crash"
+        }
+      ],
+      "CauseCode": "Multiple Vehicle Pile Up",
+      "PerilCode": "Accident Damage",
+      "Address": {
+        "PostalCode": 2001,
+        "Province": "Gauteng",
+        "Line1": "3 Simmonds street",
+        "Line2": "Johannesburg",
+        "Line3": "Near Standardbank Building",
+        "Line4": "string"
+      },
+      "ItemType": "BUILDING",
+      "ItemStatus": "DRIVABLE",
+      "DateAndTime": "2018-07-06T07:28:56.039Z",
+      "IncidentDateAndTime": "2018-07-06T07:28:56.039Z",
+      "ThirdPartyDetails": [
+        {
+     "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "Blue",
+            "RegistrationNo": "987321"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "8a5a9efe-23c9-402f-9bce-0063749f644f"
+        }
+      ],
+      "WhereFrom": "Trip",
+      "WhereTO": "Home"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import Respform,Reqform
 import json
 from .mprocess import Monprocess
+from .nprocess import Policy_starter
 import requests
 # Create your views here.
 
@@ -95,6 +96,7 @@ def beanstalk_quote(request):
             dispq = req_bankd['QuoteNumber']
             #startmon = Monprocess('ctp')
             #ctp_dat = startmon.ctp_procdata(dispq)
+            log_policy(dispq,"tester")
             print("...............INSIDE CONVERT PROCESS PROCESS AND DONE............................")
             return render(request, 'beanstalk_exe.html', {
                 'Req_data': '',
@@ -157,9 +159,16 @@ def beanstalk_policy(request):
     if request.method == 'POST':
         return render(request, 'beanstalk_exe2.html')
     else:
-        startpol
+        pass
 
-    return render(request, 'beanstalk_exe2.html')
+    startpol = Policy_starter("get_policy")
+    policy_list = startpol.policy_base()
+    return render(request, 'beanstalk_exe2.html',{"polist":policy_list})
+
+
+def log_policy(policy_n,tuser):
+    logpol = Policy_starter("log_policy")
+    logpol.policy_log(tuser,policy_n)
 
 
 
