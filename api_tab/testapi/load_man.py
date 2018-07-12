@@ -2,7 +2,6 @@ from pymongo import MongoClient
 import datetime
 
 
-
 def loader():
     time_stamp = datetime.datetime.now().isoformat()
     userid = 'c2408873'
@@ -19,6 +18,7 @@ def loader():
                   },
                  ]}
     )
+
 
 def updater():
     time_stamp = datetime.datetime.now().isoformat()
@@ -53,6 +53,7 @@ if __name__ == '__main__':
     if my_op == "update":
         updater()
     elif my_op == "insert":
+        print('am doing an insertion')
         loader()
 
 """
