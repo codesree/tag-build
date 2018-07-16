@@ -39,28 +39,25 @@ class Composer():
                              "amend_quote":self.qdata
                          }
                    })
-
+        print("type of upd token",type(upd_token))
+        print("Update token",upd_token)
         col.update({
             "policy_number":self.policy
         },
-            { "$set":{
-                toPersons,
-                toVehicle,
-                toMotorAccessories,
-                toDrivers,
-                toBankingDetails,
-                toITCDetails,
-                toContacts,
-                toAddressses
-
-            }
-
+            {
+                "$set":upd_token
             }
         )
+        acur = col.find_one({"policy_number": self.policy})
+
+        self.amdata = acur['amend_quote']
+        self.amdata = json.dumps(self.amdata, indent=5)
+
+        return self.amdata
+
     def perform_tokens(self):
-        global toPersons
-        global toAddressses
-        global toBankingDetails, toContacts, toITCDetails, toMotorAccessories, toVehicle, toDrivers
+        global upd_token
+        upd_token = {}
         toPersons = {
             "amend_quote.Persons.0.State": "POLICY",
             "amend_quote.Persons.0.Status": "ACTIVE",
@@ -101,5 +98,5 @@ class Composer():
             "amend_quote.Addressses": "ACTIVE",
             "amend_quote.Addressses": "U"
         }
-
-
+        upd_token.update(toPersons,toVehicle,toITCDetails,toMotorAccessories,toDrivers,toAddressses,
+                         toBankingDetails,toContacts)

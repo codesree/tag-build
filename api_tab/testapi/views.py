@@ -35,12 +35,11 @@ def beanstalk_quote(request):
         if crpost is not None:
             #check offline mode
             api_req = request.POST.get('content')
-            offline_loader(api_req,request)
+            offline_pro(api_req,request)
             context_dict = {'text': 'API Gateway testing channel - TAG'}
             return render(request, 'tag_home.html', context_dict)
 
             # offline ends
-
             incom_post = crpost
             print("Posted...",incom_post)
         elif acpost is not None:
@@ -170,14 +169,19 @@ def beanstalk_policy(request):
 
         #offline process - amend
 
-        offline_adder(selected_policy)
-        return render(request, 'beanstalk_exe2.html')
-
+        amdata = offline_adder(selected_policy)
+        return render(request, 'beanstalk_amendment.html',{
+            "amd_data":amdata,
+            "pantit": "amq"
+        })
         #offline ends
-        startpol = Policy_starter('get_policy')
-        startpol.get_quote(selected_policy)
+        amdpol = Policy_starter('amend_policy')
+        amdata = amdpol.get_quote(selected_policy)
 
-        return render(request, 'beanstalk_exe2.html')
+        return render(request, 'beanstalk_amendment.html',{
+            "amd_data":amdata,
+            "pantit": "amq"
+        })
     else:
         pass
 
@@ -191,7 +195,6 @@ def log_policy(policy_n,tuser):
     logpol.policy_log(tuser,policy_n)
 
 
-
 def offline_pro(quotes,request):
     startoff = Composer('policy_hub')
     startoff.load_man(quotes)
@@ -200,4 +203,5 @@ def offline_pro(quotes,request):
 def offline_adder(selectp):
     startadd = Composer('policy_hub')
     startadd.perform_tokens()
-    startadd.amendpro(selectp)
+    amdata = startadd.amendpro(selectp)
+    return amdata
