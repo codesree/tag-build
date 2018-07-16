@@ -4,6 +4,7 @@ import json
 from .mprocess import Monprocess
 from .nprocess import Policy_starter
 import requests
+from .offline_composer import Composer
 # Create your views here.
 
 def index(request):
@@ -32,6 +33,14 @@ def beanstalk_quote(request):
         print(crpost)
 
         if crpost is not None:
+            #check offline mode
+            api_req = request.POST.get('content')
+            offline_loader(api_req,request)
+            context_dict = {'text': 'API Gateway testing channel - TAG'}
+            return render(request, 'tag_home.html', context_dict)
+
+            # offline ends
+
             incom_post = crpost
             print("Posted...",incom_post)
         elif acpost is not None:
@@ -45,6 +54,7 @@ def beanstalk_quote(request):
         api_req = request.POST.get('content')
         print(api_req)
         if incom_post == 'PROCEED WITH ACCEPT QUOTE':
+
             Resp_data = con_gatepro(api_req, request, 'ac_quote')
             incom_post_acq = True
         elif incom_post == 'PROCEED WITH GENERATE QUOTE':
@@ -119,7 +129,6 @@ def beanstalk_quote(request):
                           'pantit':'crq'
                       })
 
-
 def con_gatepro(api_req,request,func):
     do_req = api_req
     funcp = func
@@ -157,6 +166,17 @@ def con_gatepro(api_req,request,func):
 
 def beanstalk_policy(request):
     if request.method == 'POST':
+        selected_policy = request.POST.get('psel')
+
+        #offline process - amend
+
+        offline_adder(selected_policy)
+        return render(request, 'beanstalk_exe2.html')
+
+        #offline ends
+        startpol = Policy_starter('get_policy')
+        startpol.get_quote(selected_policy)
+
         return render(request, 'beanstalk_exe2.html')
     else:
         pass
@@ -172,4 +192,12 @@ def log_policy(policy_n,tuser):
 
 
 
+def offline_pro(quotes,request):
+    startoff = Composer('policy_hub')
+    startoff.load_man(quotes)
 
+
+def offline_adder(selectp):
+    startadd = Composer('policy_hub')
+    startadd.perform_tokens()
+    startadd.amendpro(selectp)

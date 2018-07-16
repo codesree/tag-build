@@ -16,17 +16,23 @@
           <div class="panel-heading"><h4>Beanstalk - Policy API service</h4></div>
           <div class="panel-body">
                 <form method="post" action="{% url 'beanstalk_exe2' %}">
+                        {% csrf_token %}
     <div class="form-group">
-      <label for="sel1">Select a policy you would like to amend:</label>
-      <select class="form-control glyphicon" data-show-icon="true" id="sel1">
+      <label for="psel">Select a policy you would like to amend:</label>
+      <select class="form-control glyphicon" data-show-icon="true" id="psel" name="psel">
         <option>click here</option>
         {% for data in polist %}
-          <option value="{{ data.policy_number }}">
+          <option value= {{ data.policy_number }} >
               &#xe022; {{ data.policy_number }} &#xe008; {{data.created_by}} &#xe023; {{data.created_on}}
         </option>
         {% endfor %}
       </select>
-    </div></form>
+        <br>
+      <input type= "submit" class="btn btn-primary"  title="Post request" name="ampost" id="ampost"
+             value="PROCEED">
+
+    </div>
+                </form>
           </div>
       </div>
   </div>
