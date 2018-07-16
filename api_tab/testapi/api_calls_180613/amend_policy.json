@@ -45,7 +45,7 @@
         "QuoteDetails": {
           "Vehicle": [
             {
-              "VehicleID": "83fc0297-ff79-4605-b6dc-a646170bb390",
+                  "VehicleID": "83fc0297-ff79-4605-b6dc-a646170bb390",
                   "Make": "HONDA",
                   "Model": "BRIO 1.2 COMFORT",
                   "MMcode": "",

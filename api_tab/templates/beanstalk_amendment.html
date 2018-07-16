@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+<head>
+ <title>Test Application Gateway - API GATEWAY testing</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+{% block body_block %}
+<div class="container">
+           <ul class="nav nav-tabs nav-justified">
+           {% if pantit == "amq" %}
+                <li class="active"><a href="#">AMEND POLICY</a></li>
+                <li><a href="#">ACCEPT POLICYAMENDMENT</a></li>
+                <li><a href="#">VIEW TRANSITION</a></li>
+           {% elif pantit == "aam" %}
+                <li><a href="#">AMEND POLICY</a></li>
+               <li><a href="active">ACCEPT POLICYAMENDMENT</a></li>
+                  <li><a href="#">VIEW TRANSITION</a></li>
+           {% elif pantit == "comp" %}
+                 <li><a href="#">AMEND POLICY</a></li>
+               <li><a href="#">ACCEPT POLICYAMENDMENT</a></li>
+                  <li><a href="active">VIEW TRANSITION</a></li>
+                {% else %}{% endif %}
+        </ul>
+               <br>
+            <div class="row">
+                <div class="col-md-7">
+                        <button class="btn btn-info">API request</button>
+                    <div id="editor">{{amd_data}}
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+<script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
+</script>
+<script>
+     var textarea = $('#content');
+
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2")
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+
+   editor2.setTheme("ace/theme/cobalt");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+</script>
+
+
+{% endblock %}
+

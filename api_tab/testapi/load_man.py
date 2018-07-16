@@ -2,58 +2,77 @@ from pymongo import MongoClient
 import datetime
 
 
-
 def loader():
     time_stamp = datetime.datetime.now().isoformat()
-    userid = 'c2408873'
-    policy_number = 'SHL000009234'
+    userid = 'c2408856'
+    policy_number = 'SHL000001258'
     status = 'active'
-    col.insert({
-        "tname": "policy_hub",
-            "data": [
-                {
+    col.insert(
+                   {
                     "policy_number": policy_number,
                     "created_by": userid,
                     "created_on": time_stamp,
                     "status": status
-                  },
-                 ]}
+                  }
     )
+
+
+
 
 def updater():
     time_stamp = datetime.datetime.now().isoformat()
     userid = 'c2408873'
-    policy_number = 'SHL000003435'
+    policy_number = 'SHL000001234'
     status = 'active'
     col.update(
         {
-            "tname": "policy_hub",
+            "policy_number": "SHL000001234",
         },
         {
-            "$addToSet":
-                {"data":
-                    {
-                    "policy_number": policy_number,
-                    "created_by": userid,
-                    "created_on": time_stamp,
-                    "status": status
-                    }
+            "$set":
+                {
+                        "created_quote" : "QUOTE data"
                 }
          })
+
+
+def perform():
+    podata = col.find()
+    lister = []
+    for doc in podata:
+        print(type(doc))
+        print(doc)
+        del doc['created_quote']
+        del doc['_id']
+        lister.append(doc)
+
+    print(type(podata))
+    print(podata)
+    print(lister)
 
 
 if __name__ == '__main__':
     db = MongoClient()
     con = db['testman']
 
-    col = con['policy_base']
+    col = con['policy_hub']
 
-    my_op = "update"
+    my_op = "perform"
 
     if my_op == "update":
         updater()
     elif my_op == "insert":
+        print('am doing an insertion')
         loader()
+    elif my_op == "perform":
+        print("processing....")
+        perform()
+
+
+
+
+
+
 
 """
 R E F E R E N C E S -----------------------------------------
