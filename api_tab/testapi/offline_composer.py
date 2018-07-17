@@ -63,40 +63,52 @@ class Composer():
             "amend_quote.Persons.0.Status": "ACTIVE",
             "amend_quote.Persons.0.ActionType": "U"
         }
+        upd_token.update(toPersons)
         toVehicle = {
-            "amend_quote.QuoteDetails.Vehicle.0": "POLICY",
-            "amend_quote.QuoteDetails.Vehicle.0": "ACTIVE",
-            "amend_quote.QuoteDetails.Vehicle.0": "U"
+            "amend_quote.QuoteDetails.Vehicle.0.State": "POLICY",
+            "amend_quote.QuoteDetails.Vehicle.0.Status": "ACTIVE",
+            "amend_quote.QuoteDetails.Vehicle.0.ActionType": "U"
         }
+        upd_token.update(toVehicle)
+
         toMotorAccessories = {
-            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0": "POLICY",
-            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0": "ACTIVE",
-            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0": "U"
+            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0.State": "POLICY",
+            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0.Status": "ACTIVE",
+            "amend_quote.QuoteDetails.Vehicle.0.MotorAccessories.0.ActionType": "U"
         }
+        upd_token.update(toMotorAccessories)
+
         toDrivers = {
-            "amend_quote.Persons.0.DriverTests.0": "POLICY",
-            "amend_quote.Persons.0.DriverTests.0": "ACTIVE",
-            "amend_quote.Persons.0.DriverTests.0": "U"
+            "amend_quote.Persons.0.DriverTests.0.State": "POLICY",
+            "amend_quote.Persons.0.DriverTests.0.Status": "ACTIVE",
+            "amend_quote.Persons.0.DriverTests.0.ActionType": "U"
         }
+        upd_token.update(toDrivers)
+
         toITCDetails = {
-            "amend_quote.ITCDetails": "POLICY",
-            "amend_quote.ITCDetails": "ACTIVE",
-            "amend_quote.ITCDetails": "U"
+            "amend_quote.ITCDetails.State": "POLICY",
+            "amend_quote.ITCDetails.Status": "ACTIVE",
+            "amend_quote.ITCDetails.ActionType": "U"
         }
+        upd_token.update(toITCDetails)
+
         toContacts = {
-            "amend_quote.Contacts": "POLICY",
-            "amend_quote.Contacts": "ACTIVE",
-            "amend_quote.Contacts": "U"
+            "amend_quote.Contacts.0.State": "POLICY",
+            "amend_quote.Contacts.0.Status": "ACTIVE",
+            "amend_quote.Contacts.0.ActionType": "U"
         }
+        upd_token.update(toContacts)
+
         toBankingDetails = {
-            "amend_quote.BankingDetails": "POLICY",
-            "amend_quote.BankingDetails": "ACTIVE",
-            "amend_quote.BankingDetails": "U"
+            "amend_quote.BankingDetails.0.State": "POLICY",
+            "amend_quote.BankingDetails.0.Status": "ACTIVE",
+            "amend_quote.BankingDetails.0.ActionType": "U"
         }
+        upd_token.update(toBankingDetails)
+
         toAddressses = {
-            "amend_quote.Addressses": "POLICY",
-            "amend_quote.Addressses": "ACTIVE",
-            "amend_quote.Addressses": "U"
+            "amend_quote.Addressses.0.State": "POLICY",
+            "amend_quote.Addressses.0.Status": "ACTIVE",
+            "amend_quote.Addressses.0.ActionType": "U"
         }
-        upd_token.update(toPersons,toVehicle,toITCDetails,toMotorAccessories,toDrivers,toAddressses,
-                         toBankingDetails,toContacts)
+        upd_token.update(toAddressses)

@@ -34,10 +34,10 @@ def beanstalk_quote(request):
 
         if crpost is not None:
             #check offline mode
-            api_req = request.POST.get('content')
+            """api_req = request.POST.get('content')
             offline_pro(api_req,request)
             context_dict = {'text': 'API Gateway testing channel - TAG'}
-            return render(request, 'tag_home.html', context_dict)
+            return render(request, 'tag_home.html', context_dict)"""
 
             # offline ends
             incom_post = crpost

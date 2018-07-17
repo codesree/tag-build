@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 {% extends "tag_home.html"  %}
 <head>
- <title>Test Application Gateway - API GATEWAY testing</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+    <title>Test Access Gateway - API GATEWAY testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css" media="screen">
+#editor {
+    /** Setting height is also important, otherwise editor wont showup**/
+    height: 900px;
+    width: 900px;
+}
+  </style></head>
 {% load static %}
 {% block body_block %}
 <div class="container">
@@ -28,9 +34,51 @@
         </ul>
                <br>
             <div class="row">
-                <div class="col-md-7">
-                        <button class="btn btn-info">API request</button>
-                    <div id="editor">{{amd_data}}
+                   <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API request</div>
+                   <div class="panel-body">
+                       <div id="editor">{{amd_data}}</div>
+                   </div>
+                   </div>
+            </div>
+
+<div class="container">
+
+     <div class="row">
+                <div class="col-md-10">
+                        <button class="btn btn-info">API Response</button>
+                    <br>
+                    <div id="editor2">{{amd_rdata}}
+                    </div>
+                           <form  method = 'POST' action="{% url 'beanstalk_amendment' %}">
+           {% csrf_token %}
+                                       <div class="form-group">
+
+                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
+                           </div>
+           <!-- checkpoint execute/proceed - accept/convert to policy -->
+           {% if pantit == 'amq'%}
+            <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="crpost" id="crpost"
+             value="PROCEED WITH AMEND POLICY">
+    </div></div>
+           {% elif pantit == 'aac' %}
+           <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
+             value="PROCEED WITH POLICY AMENDMENT">
+    </div></div>
+           {% elif pantit == 'comp' %}
+           <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
+             value="VIEW CHANGES">
+    </div></div>
+           {% else %}
+           {% endif %}
+                    </form>
                     </div>
                 </div>
             </div>
@@ -39,6 +87,7 @@
 
 <script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
 </script>
+
 <script>
      var textarea = $('#content');
 
