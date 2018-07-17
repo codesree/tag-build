@@ -8,15 +8,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>ACE in Action</title>
 <style type="text/css" media="screen">
-#editor {
-    /** Setting height is also important, otherwise editor wont showup**/
-    height: 700px;
-    width: 600px;
-}
-#editor2 {
-    height: 500px;
-    width: 450px;
-}
+    #editor {
+        height: 350px;
+    }
+    #editor2 {
+        height: 350px;
+    }
 </style>
 </head>
 <body>
@@ -46,15 +43,12 @@
     <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
   </ul>
 
-    <div class="panel panel-info">
-        <div class="panel-heading">
-             <span class="panel-title"></span>
-        </div>
-        <div class="panel-body">
             <br>
             <div class="row">
-                <div class="col-md-7">
-                        <button class="btn btn-info">API request</button>
+                                           <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API request</div>
+                   <div class="panel-body">
                     <div id="editor">{
   "PolicyNumber": "SHL000009043",
   "ClaimStatus": "FNOL",
@@ -126,25 +120,28 @@
           },
           "InsuranceCompany": "string",
           "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+                        sreekanth
         }
       ]
     }
   ]
 }
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="container">
-                    <div class="row">
-                                        <div class="col-sm-4">
-                           <br>
-                           <br>
- <ul class="list-group">
-    <li class="list-group-item list-group-item-info">Policy number <span class="badge">SHL000009156</span></li>
-    <li class="list-group-item list-group-item-info">Status <span class="badge">Success</span></li>
-    <li class="list-group-item list-group-item-danger"> Error message <span class="badge">NA</span></li>
-</ul>
-  <!--<table class="table-condensed">
+
+        </div>
+       </div>
+       </div>
+            </div>
+</div>
+
+<div class ="container">
+    <div class="row">
+         <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+
+        <table class="table-condensed">
     <thead>
        </thead>
     <tbody>
@@ -161,48 +158,39 @@
         <td>data</td>
       </tr>
     </tbody>
-  </table>-->
-                       </div></div>
-
-                    </div>
-                    <div class="row">
-                        <button class="btn btn-info">API response</button>
-                    <div id="editor2">{
-                <!--    <textarea class="col-md-6" name="content" id="content" rows="5" cols="70" hidden="hidden"></textarea>-->
-                    </div>
-       <form  method = 'POST' action="{% url 'test_execution' %}">
-                                       <div class="form-group">
-
-                    <textarea name="content" id="content" hidden="hidden"></textarea>
-                           </div>
-                <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="post" id="post" value="EXECUTE">
-    </div></div>
-                    </form>
-                    </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center">---End of editor---</div>
-    <button class="btn btn-primary" id="toggletextarea-btn">Hide TextArea</button>
-    <button class="btn btn-default" id="alertcontent-btn">Alert Content</button>
-    <br/>
-    <br/>
+  </table>
 </div>
+                <div class="col-md-8">
+                    <div id="editor2">"ThirdPartyDetails": [
+        {
+          "ThirdPartyDetailsId": "92e60929-2e81-42d0-ae59-622ca829a06a",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+        }
+      ]</div>
+</div>
+            </div></div>
+</div></div>
 <script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
      var textarea = $('#content');
 
    var editor = ace.edit("editor");
-   var editor2 = ace.edit("editor2")
+   var editor2 = ace.edit("editor2");
    editor.setTheme("ace/theme/eclipse");
    editor.getSession().setMode("ace/mode/json");
    document.getElementById('editor').style.fontSize='14px';
 
 
-   editor2.setTheme("ace/theme/cobalt");
+   editor2.setTheme("ace/theme/dracula");
    editor2.getSession().setMode("ace/mode/json");
    document.getElementById('editor2').style.fontSize='14px';
 
