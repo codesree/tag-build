@@ -5,7 +5,7 @@
   "ClaimItems": [
     {
       "ItemId": "ebaa3742-5691-49b0-b191-95558016edd0",
-      "Note": "Registering a claim for breakages in event of fallen trees at 9:00 am jun 27,2018",
+      "Note": "Registering a claim for breakages in event of fallen trees at 9:00 am jul 18,2018",
       "Coordinates": {
         "Longitude": "31.5747",
         "Latitude": "-23.8582"

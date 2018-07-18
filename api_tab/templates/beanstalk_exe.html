@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 {% extends "tag_home.html"  %}
   <head>
-    <title>Test Access Gateway - API GATEWAY testing</title>
+    <title>Test Application Gateway - T A G</title>
      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type="text/css" media="screen">
-#editor {
-    /** Setting height is also important, otherwise editor wont showup**/
-    height: 500px
-}
+    #editor {
+        height: 350px;
+    }
+    #editor2 {
+        height: 350px;
+    }
   </style></head>
 {% load static %}
 {% block body_block %}
 <div class="container">
-       <ul class="nav nav-tabs nav-justified">
+
+      <!-- <ul class="nav nav-tabs nav-justified">
            {% if pantit == "crq" %}
-                <li class="active"><a href="#">------CREATE QUOTE------</a></li>
+                <li class="active"><a href="#">CREATE QUOTE</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
            {% elif pantit == "acq" %}
                 <li><a href="#">CREATE QUOTE</a></li>
-                <li class="active"><a href="#">------ACCEPT QUOTE------</a></li>
+                <li class="active"><a href="#">ACCEPT QUOTE</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
            {% elif pantit == "ctp" %}
                 <li><a href="#">CREATE QUOTE</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
-                <li class="active"><a href="#">------CONVERT QUOTE TO POLICY------</a></li>
+                <li class="active"><a href="#">CONVERT QUOTE TO POLICY</a></li>
            {% else %}{% endif %}
-        </ul>
-        <div class="panel panel-success">
-        <div class="panel-heading">
-            <!--check point create/accept/convtopolicy-->
-            </div>
-        <div class="panel-body">
+        </ul>-->
             <br>
             <div class="row">
-                <div class="col-md-7">
-                        <button class="btn btn-info">API request</button>
+                <div class="panel panel-info">
+                    <div class="panel-heading">API request - <mark>CREATE QUOTE</mark></div>
+                   <div class="panel-body">
                     <div id="editor">{{Req_data}}
                     </div>
+                   </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="container">
-                    <div class="row">
-                        <div class = "col-sm-4">
-                           <br>
-                           <br>
-<!-- DATA DISPLAY AREA -->
-                             <ul class="list-group">
+            </div>
+</div>
+      <form  method = 'POST' action="{% url 'test_execution' %}">
+           {% csrf_token %}
+           <div class="form-group">
+                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
+                           </div>
+           <!-- checkpoint execute/proceed - accept/convert to policy -->
+           {% if pantit == 'crq'%}
+          <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="crpost" id="crpost"
+             value="PROCEED WITH CREATE QUOTE">
+           {% elif pantit == 'acq' %}
+      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
+             value="PROCEED WITH ACCEPT QUOTE">
+           {% elif pantit == 'ctp' %}
+      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
+             value="PROCEED WITH POLICY CONVERSION">
+           {% else %}
+           {% endif %}
+                    </form><br>
+<div class="container">
+    <div class="row">
+            <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+            <ul class="list-group">
                                      {% if dispq %}
                                  <li class="list-group-item list-group-item-info">Quote number <span class="badge">{{dispq}}</span></li>
                                         {% if pantit == 'acq' %}
@@ -70,121 +90,39 @@
                                  {% else %}
                                  {% endif %}
             </ul>
-  <!--
-  <table class="table-condensed">
-    <thead>
-       </thead>
-    <tbody>
-    {% if dispq %}
-      <tr>
-
-        <td>Quote number</td>
-          <td><button class="btn btn-info">{{dispq}}</button></td>
-      </tr>
-    {% elif dispp %}
-          <tr>
-        <td>Policy number</td>
-          <td><button class="btn btn-info">{{quote_number}}</button></td>
-      </tr>
-    {% else %}
-    {% endif %}
-    {% if stat == 'Success' %}
-      <tr>
-          <td>Status</td>
-        <td><button class="btn btn-success">Success</button></td>
-      </tr>
-    {% elif stat == 'Fail' %}
-          <tr>
-          <td>Status</td>
-        <td><button class="btn btn-success">Success</button></td>
-      </tr>
-    {% else %}
-        <tr>
-        <td>DISPLAY DATA</td>
-    </tr>
-    {% endif %}
-      {% if eron %}
-      <tr>
-        <td>Error</td>
-        <td>data</td>
-      </tr>
-     {% endif %}
-    </tbody>
-  </table>-->
-                        </div></div></div>
-                    <div class="row">
-                        <button class="btn btn-info">API response</button>
+        </div>
+          <div class="col-md-8">
                     <div id="editor2">{{Resp_data}}</div>
-       <form  method = 'POST' action="{% url 'test_execution' %}">
-           {% csrf_token %}
-                                       <div class="form-group">
 
-                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
-                           </div>
-           <!-- checkpoint execute/proceed - accept/convert to policy -->
-           {% if pantit == 'crq'%}
-            <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="crpost" id="crpost"
-             value="PROCEED WITH GENERATE QUOTE">
-    </div></div>
-           {% elif pantit == 'acq' %}
-           <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
-             value="PROCEED WITH ACCEPT QUOTE">
-    </div></div>
-           {% elif pantit == 'ctp' %}
-           <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
-             value="PROCEED WITH POLICY CONVERSION">
-    </div></div>
-           {% else %}
-           {% endif %}
-                    </form>
                     </div>
                     </div>
             </div>
         </div>
     </div>
-    <!--  <button class="btn btn-primary" id="toggletextarea-btn">Hide TextArea</button>
-    <button class="btn btn-default" id="alertcontent-btn">Alert Content</button>-->
-    <br/>
-    <br/>
-</div>
-     <!--  <button class="btn btn-primary" id="toggletextarea-btn">Hide TextArea</button>
-    <button class="btn btn-default" id="alertcontent-btn">Alert Content</button>-->
+
 
 <script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
 </script>
 <script>
-     var textarea = $('#content');
-
+   var textarea = $('#content');
    var editor = ace.edit("editor");
    var editor2 = ace.edit("editor2")
    editor.setTheme("ace/theme/eclipse");
    editor.getSession().setMode("ace/mode/json");
    document.getElementById('editor').style.fontSize='14px';
-
-
-   editor2.setTheme("ace/theme/cobalt");
+   editor2.setTheme("ace/theme/dracula");
    editor2.getSession().setMode("ace/mode/json");
    document.getElementById('editor2').style.fontSize='14px';
-
    editor.getSession().on('change', function () {
        textarea.val(editor.getSession().getValue());
    });
-
    textarea.val(editor.getSession().getValue());
-
    $("#toggletextarea-btn").on('click', function () {
        textarea.toggle();
        $(this).text(function (i, text) {
            return text === "Show Content" ? "Hide Content" : "Show Content";
        });
    });
-
    $("#alertcontent-btn").on('click', function () {
        alert(textarea.val());
    });
@@ -192,5 +130,4 @@
 
 
 {% endblock %}
-
 
