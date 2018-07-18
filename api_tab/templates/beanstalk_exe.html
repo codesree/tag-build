@@ -20,24 +20,26 @@
 <div class="container">
 
       <!-- <ul class="nav nav-tabs nav-justified">
-           {% if pantit == "crq" %}
                 <li class="active"><a href="#">CREATE QUOTE</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
-           {% elif pantit == "acq" %}
                 <li><a href="#">CREATE QUOTE</a></li>
                 <li class="active"><a href="#">ACCEPT QUOTE</a></li>
                 <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
-           {% elif pantit == "ctp" %}
                 <li><a href="#">CREATE QUOTE</a></li>
                 <li><a href="#">ACCEPT QUOTE</a></li>
                 <li class="active"><a href="#">CONVERT QUOTE TO POLICY</a></li>
-           {% else %}{% endif %}
         </ul>-->
             <br>
             <div class="row">
                 <div class="panel panel-info">
+                    {% if pantit == "crq" %}
                     <div class="panel-heading">API request - <mark>CREATE QUOTE</mark></div>
+                    {% elif pantit == "acq" %}
+                    <div class="panel-heading">API request - <mark>ACCEPT QUOTE</mark></div>
+                    {% elif pantit == "ctp" %}
+                    <div class="panel-heading">API request - <mark>CONVERT QUOTE TO POLICY</mark></div>
+                    {% else %}{% endif %}
                    <div class="panel-body">
                     <div id="editor">{{Req_data}}
                     </div>
@@ -55,10 +57,10 @@
           <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="crpost" id="crpost"
              value="PROCEED WITH CREATE QUOTE">
            {% elif pantit == 'acq' %}
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
+          <input type= "submit" class="btn btn-primary btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
              value="PROCEED WITH ACCEPT QUOTE">
            {% elif pantit == 'ctp' %}
-      <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
+          <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
              value="PROCEED WITH POLICY CONVERSION">
            {% else %}
            {% endif %}
