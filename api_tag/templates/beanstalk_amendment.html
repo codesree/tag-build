@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+<head>
+    <title>Test Access Gateway - API GATEWAY testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css" media="screen">
+    #editor {
+        height: 350px;
+    }
+    #editor2 {
+        height: 350px;
+    }
+  </style></head>
+{% load static %}
+{% block body_block %}
+<div class="container">
+                <br>
+            <div class="row">
+                <div class="panel panel-info">
+                    {% if pantit == "amq" %}
+                    <div class="panel-heading">API request - <mark>AMEND POLICY QUOTE</mark></div>
+                    <div class="panel-body">
+                    <div id="editor">{{amd_data}}
+                    </div>
+                   </div>
+                    {% elif pantit == "aac" %}
+                    <div class="panel-heading">API request - <mark>ACCEPT POLICY AMENDMENT</mark></div>
+                    <div class="panel-body">
+                         <form  method = 'POST' action="{% url 'beanstalk_amendment' %}">
+                         {% csrf_token %}
+                          <button type="submit" class="btn btn-default">Proceed</button>
+                         <div class="input-group">
+                        <span class="input-group-addon">Select Accept / Decline  - Policy Amendment</span>
+                         <select id="adsel" name="adsel" placeholder="What's your decision ?">
+                             <option value="Accept">Accept Policy Amendment</option>
+                             <option value="Decline">Decline Policy Amendment</option>
+                         </select>
+                        </div>
+                        <input type= "submit" class="btn btn-primary btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="aacpost" id="aacpost"
+                        value="PROCEED WITH THIS DECISION">
+                         </form><br>
+
+                    </div>
+                   </div>
+                    {% elif pantit == "comp" %}
+                    <div class="panel-heading">API request - <mark>TRANSITION</mark></div>
+                    {% else %}{% endif %}
+
+                </div>
+            </div>
+</div>
+      <form  method = 'POST' action="{% url 'beanstalk_amendment' %}">
+           {% csrf_token %}
+           <div class="form-group">
+                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
+                           </div>
+           <!-- checkpoint execute/proceed - accept/convert to policy -->
+           {% if pantit == 'amq'%}
+          <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="amdpost" id="amdpost"
+             value="PROCEED WITH POLICY AMENDMENT">
+           {% elif pantit == 'comp' %}
+          <input type= "submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Post request" name="vtrpost" id="vtrpost"
+             value="VIEW CHANGES">
+           {% else %}
+           {% endif %}
+      </form><br>
+<div class="container">
+    <div class="row">
+            <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+            <ul class="list-group">
+                                     {% if dispq %}
+                                 <li class="list-group-item list-group-item-info">Quote number <span class="badge">{{dispq}}</span></li>
+                                        {% if pantit == 'amdp' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..amend quote has been proceed and it is now ready to accept/decline</mark></li>
+                                        {% elif pantit == 'ctp' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..policy amendment successfully processed</mark></li>
+                                        {% else %}{% endif %}
+                                     {% elif dispp %}
+                                 <li class="list-group-item list-group-item-info">Policy number <span class="badge">{{dispp}}</span></li>
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..your Policy is now confirmed</mark></li>
+                                     {% else %}
+                                     {% endif %}
+                                     {% if stat == 'Success' %}
+                                 <li class="list-group-item list-group-item-info">Status<span class="badge">Success</span></li>
+                                     {% elif stat == 'fail' %}
+                                 <li class="list-group-item list-group-item-danger"><code>NA</code></li>
+                                 {% else %}
+                                 {% endif %}
+            </ul>
+        </div>
+          <div class="col-md-8">
+                    {% if pantit == 'aac' %}
+                                  <div id="editor2">{{presp_data}}</div>
+                    {% elif pantit == 'amq' %}
+                                  <div id="editor2">{{amd_rdata}}</div>
+                    {% elif pantit == 'comp' %}
+                                  <div id="editor2">PROCESS COMPLETED</div>
+                    {% endif %}
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
+</script>
+
+<script>
+     var textarea = $('#content');
+
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2")
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+
+   editor2.setTheme("ace/theme/cobalt");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+</script>
+
+
+{% endblock %}
+

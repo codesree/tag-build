@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor {
+        height: 600px;
+    }
+    #editor2 {
+        height: 600px;
+    }
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style src="/Users/isree/PycharmProjects/tag-build/api_tab/build_front_view/tag_style" type="text/scss">
+    </style>
+
+
+</head>
+<body>
+<div class="tag-tile">
+<div class="txt" contenteditable="true">
+  TEST APPLICATION GATEWAY
+              - TAG
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+                <br>
+                <div class="panel panel-info">
+                     <div class="panel-heading">View policy API call -<mark>Before Amendment</mark></div>
+                   <div class="panel-body">
+                    <div id="editor">
+{ "ThirdPartyDetailsId": "92e60929-2e81-42d0-ae59-622ca829a06a",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+        }
+                    </div>
+                   </div>
+                </div>
+            </div>
+<div class="col-md-6">
+    <br>
+            <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   View policy API call -<mark>After Amendment</mark></div>
+                   <div class="panel-body">
+                    <div id="editor2">
+{
+          "ThirdPartyDetailsId": "92e60929-2e81-42d0-ae59-622ca829a06a",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+        }
+                    </div>
+                    </div>
+                    </div>
+            </div>
+    </div>
+        </div>
+</div>
+
+
+
+<script src="/Users/isree/PycharmProjects/tag-build/api_tab/static/src_noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+     var textarea = $('#content');
+
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2");
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+</script>
+</body>
+</html>
+
+

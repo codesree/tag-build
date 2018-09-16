@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+   $(document).ready(function() {
+        var max_fields      = 10;
+        var wrapper1         = $(".container1");
+        var wrapper2         = $(".container2");
+
+        var add_vehicle      = $(".button1");
+        var add_building      = $(".button2");
+        var add_content      = $(".add_content_field");
+
+
+
+        var x = 1;
+        $(add_vehicle).click(function(e){
+            e.preventDefault();
+            if(x < max_fields){
+                x++;
+                $(wrapper1).append('<div class="row"><div class="form-group">\n\n' +
+                    '<div class="list-group">\n'+
+                    '<p class=list-group-item>\n'+
+                    '  <select class="form-control" id="sel1" name="vehicles">\n' +
+                    '  <option>Select a vehicle:</option>\n' +
+                    '    <option value="hnd">HONDA  BRIO - 1.2 - COMFORT</option>\n' +
+                    '    <option value="tyt">TOYOTA  ETIOS - 1.5 - SPORT - LTD -EDITION - 5DR</option>\n' +
+                    '    <option value="vlk">VOLKSWAGEN  POLO - GTi - 1.8 - TSI</option>\n' +
+                    '    <option value="frd">FORD  FIGO - 1.5Ti - VCT - TREND (5DR)</option>\n' +
+                    '  </select></p><a href="#" class="delete"> delete </a>' +
+                    '</div></div></div>'); //add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+            }
+        });
+        $(add_building).click(function(e){
+            e.preventDefault();
+            if(x < max_fields){
+                x++;
+                $(wrapper2).append('<div class="row"><div class="form-group">\n' +
+                    '      <input type="building" class="form-control" id="building" placeholder="Enter name of the building" name="building">\n' +
+                    '  <a href="#" class="delete"> delete </a></div></div>'); //add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+             }
+        });
+
+        $(wrapper1).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+          $(wrapper2).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+   </script>
+<style>
+
+       .button1 {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  background-color: #4563af;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+.button2 {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  background-color: #4563af;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button1:hover span {
+  padding-right: 25px;
+}
+.button2:hover span {
+  padding-right: 25px;
+}
+.button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+    .selen_button {
+    background-color: #4563af; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.selen_button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6">
+    <div class="well">
+        <p style="color: #2557b4;font-size: 18px">Select your method for asset quote : <span class="glyphicon glyphicon-hand-right"></span></p>
+    </div>
+</div>
+
+<div class="col-sm-4">
+<div class="list-group">
+<p class="list-group-item"><button class="button selen_button" data-toggle="modal" data-target="#myModal">Single entity</button></p>
+<p class="list-group-item"><button class="button selen_button" data-toggle="modal" data-target="#myModal">Multiple entities</button></p>
+</div>
+</div>
+</div>
+<br><br>
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choose your product: < pick up random ></h4>
+        </div>
+        <div class="modal-body">
+  <!--<div class="list-group">
+       <div class="checkbox">  <div class="list-group-item">
+        <label><input type="checkbox" value="Motor">Motor Vehicle</label>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+        <label><input type="checkbox" value="Content">Home Content</label>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+    <label><input type="checkbox" value="">Building</label>
+    </div>
+    </div>
+</div> -->
+
+            <div class="container">
+<form action="/action_page.php">
+    <div class="col-sm-4">
+    <div class="well">
+        <p style="color: #2557b4;font-size: 18px">Choose your entities for asset quote : <span class="glyphicon glyphicon-hand-right"></span></p>
+    </div>
+
+ </div>
+    <div class="col-sm-4">
+            <div class="well">
+    <button class="button1" style="vertical-align:middle"><span>Add Vehicle</span></button>
+<div class="container1">
+</div>
+<br><br>
+<button class="button2" style="vertical-align:middle"><span>Add Building</span></button><br>
+<div class="container2">
+</div>
+ </div>
+    </div>
+   <!-- <div class="col-sm-2">
+        <div class="well">
+            <div class="form-group">
+           <input type="submit" class="form-control selen_button" name="" value="Proceed"></div>
+        </div>
+    </div>-->
+</form>
+    </div>
+        </div>
+        <div class="modal-footer">
+         <div class="col-sm-4">
+         <div class="form-group">
+           <input type="submit" class="form-control selen_button" name="" value="Proceed"></div>        </div>
+      </div>
+          </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>

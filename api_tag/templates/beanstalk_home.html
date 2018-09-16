@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+<head>
+ <title>Test Access Gateway - API GATEWAY testing</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+  .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  . bg-2 {
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+
+  </style>
+</head>
+{% load static %}
+{% block body_block %}
+     <div class="container-fluid bg-2 text-left">
+   <div class="well well-sm">
+       <h3 class="beantitle" style="font-weight:bold;font-family:sans-serif; padding: 30px 0;color: darkslateblue">
+           >-<>--<>--<>--<>--<>--<>--<>--<>-< Beanstalk API - Home >-<>--<>--<>--<>--<>--<>-<>--<>-<</h3>
+   </div>
+</div>
+<div class="container">
+    <br>
+ <div class="col-sm-8">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <button type="button" class="btn btn-success active btn-block"><span class="glyphicon glyphicon-off">
+                </span> Beanstalk - Insurance Quote </button> </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+             Click start to compose - <a href="{% url 'beanstalk_exe' %}">
+             <button class="btn btn-success active">START</button></a>
+              <br><br>
+          <p>Execution flow -
+              <kbd>Create quote</kbd>=>
+              <kbd>Accept quote</kbd>=>
+              <kbd>Convert to Policy</kbd>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                <button type="button" class="btn btn-primary active btn-block"><span class="glyphicon glyphicon-off">
+                </span> Beanstalk - Insurance Policy </button> </a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+             Click start to compose - <a href="{% url 'beanstalk_exe2' %}"><button class="btn btn-primary active">START</button></a>
+              <br><br>
+          <p>Execution flow -
+              <kbd>Amend Policy</kbd>=>
+              <kbd>Accept PolicyAmendment</kbd>=>
+              <kbd>View before/View after Amend</kbd>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+                <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                <button type="submit" class="btn btn-info active btn-block"><span class="glyphicon glyphicon-off">
+                </span> Beanstalk - Insurance Asset Quoting </button> </a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+             Click start to compose - <a href="{% url 'beanstalk_asset_home' %}"><button class="btn btn-info active">START</button></a>
+           <br><br>
+                      <p>Execution flow -
+              <kbd>Select entity type</kbd>=>
+              <kbd>Select the product/s</kbd>=>
+              <kbd>Execution</kbd>
+          </p>
+
+        </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                <button type="submit" class="btn btn-primary active btn-block"><span class="glyphicon glyphicon-off">
+                </span> Beanstalk - Insurance Claims </button> </a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+            HELLO
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-4">
+
+
+      <div class="media">
+    <div class="media-left media-top">
+      <img src="{% static "images/Astronaut.png" %}" class="media-object" style="width:80px">
+    </div>
+    <div class="media-body">
+      <h5 class="media-heading">INFO TAG</h5>
+      <blockquote>Beanstalk API -
+          <p style="font-family:'Nanum Gothic';font-size: 13px">an orchestration service that facilitates the runtime builds / end to end execution flow through gui
+          <br><br>- the database engine is MongoDB
+          </p></blockquote>
+         </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

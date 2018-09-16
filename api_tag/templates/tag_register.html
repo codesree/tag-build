@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+ <title>Test Access Gateway - API GATEWAY testing</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+{% block body_block %}
+    <div class="jumbotron">
+    {% if registered %}
+        <h2>Your registeration is complete..go ahead and Login</h2>
+    {% else %}
+    <h3> Register for TAG </h3>
+    <form enctype="multipart/form-data" method="post" action="{% url 'tag_register'%}">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <input type="submit" name="register "value="REGISTER">
+
+    </form>
+    {% endif %}
+    </div>
+
+
+{% endblock %}

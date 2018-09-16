@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+{% extends 'tag_home.html' %}
+
+{% load static %}
+{% block body_block %}
+    <div class="container">
+        <h3><span class="label label-default active">Asset API - Test Suite</span></h3>
+        <br>
+    <div class="row">
+    <div class="col-sm-8">
+
+ <!-------------TEST EXECUTION CONTAINER FOR HOME CONTENTS ---------------------->
+
+          <div class="panel panel-primary">
+    <div class="panel-body">
+        {% if tstat == 'hcdone' %}
+                <div class="row">
+      <div class="col-sm-8"><h5>TEST CASES FOR HOME CONTENTS:</h5></div>
+      <div class="col-sm-4">
+         <p class="hcretestexe"><button class="btn btn-info active">Re-run</button></p>
+                    <div class="hcload">
+    </div>
+
+      </div>
+    </div>
+    <div class="row">
+        <div class="exestat">
+               {% if tstat == 'hcdone' %}
+              {% if testrep and logfile %}
+  <blockquote>
+    <p><kbd>Execution Completed successfully......</kbd></p>
+      <br>
+    <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-danger active">Download test log</button></a></div>
+                      <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info active">View test report</button></a></div>
+</footer>
+  </blockquote>
+              {% else %}
+                    <blockquote>
+    <p><code>Execution Failed.............please see below info</code></p>
+                        <br>
+    <footer>Problem might have been with test report/test log generation. Please contact admin for more clarity ..</p>
+
+</footer>
+  </blockquote>
+              {% endif %}
+          {% endif %}
+
+
+        </div>
+    </div>
+            {% else %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES FOR HOME CONTENTS:</h5></div>
+      <div class="col-sm-6">
+                 <p class="hctestexe"><button class="btn btn-info active">Run</button></p>
+          <div class="hcload">
+    </div>
+      </div>
+    </div>
+                {% endif %}
+
+    </div>
+    </div>
+
+<!-------------TEST EXECUTION CONTAINER FOR MOTOR VEHICLES ---------------------->
+          <div class="panel panel-primary">
+    <div class="panel-body">
+        {% if tstat == 'mvdone' %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES FOR MOTOR VEHICLES:</h5></div>
+      <div class="col-sm-6">
+         <p class="mvretestexe"><button class="btn btn-info active">RE-Run</button></p>
+                    <div class="mvload">
+    </div>
+
+      </div>
+    </div>
+    <div class="row">
+        <div class="exestat">
+               {% if tstat == 'mvdone' %}
+              {% if testrep and logfile %}
+  <blockquote>
+    <p><kbd>Execution Completed successfully......</kbd></p>
+      <br>
+    <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-danger active">Download test log</button></a></div>
+                      <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info active">View test report</button></a></div>
+</footer>
+  </blockquote>
+              {% else %}
+                    <blockquote>
+    <p><code>Execution Failed.............please see below info</code></p>
+                        <br>
+    <footer>Problem might have been with test report/test log generation. Please contact admin for more clarity ..</p>
+
+</footer>
+  </blockquote>
+              {% endif %}
+          {% endif %}
+
+
+        </div>
+    </div>
+            {% else %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES FOR MOTOR VEHICLES:</h5></div>
+      <div class="col-sm-6">
+                 <p class="mvtestexe"><button class="btn btn-info active">Run</button></p>
+          <div class="mvload">
+    </div>
+      </div>
+    </div>
+                {% endif %}
+
+    </div>
+    </div>
+
+<!-------------TEST EXECUTION CONTAINER FOR ALLRISKS ---------------------->
+
+
+          <div class="panel panel-primary">
+    <div class="panel-body">
+        {% if tstat == 'ardone' %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES FOR ALL_RISKS:</h5></div>
+      <div class="col-sm-6">
+         <p class="arretestexe"><button class="btn btn-info active">Re-run</button></p>
+                    <div class="arload">
+    </div>
+
+      </div>
+    </div>
+    <div class="row">
+        <div class="exestat">
+               {% if tstat == 'ardone' %}
+              {% if testrep and logfile %}
+  <blockquote>
+    <p><kbd>Execution Completed successfully......</kbd></p>
+      <br>
+    <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-danger active">Download test log</button></a></div>
+                      <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info active">View test report</button></a></div>
+</footer>
+  </blockquote>
+              {% else %}
+                    <blockquote>
+    <p><code>Execution Failed.............please see below info</code></p>
+                        <br>
+    <footer>Problem might have been with test report/test log generation. Please contact admin for more clarity ..</p>
+
+</footer>
+  </blockquote>
+              {% endif %}
+          {% endif %}
+
+
+        </div>
+    </div>
+            {% else %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES FOR ALL_RISKS:</h5></div>
+      <div class="col-sm-6">
+                 <p class="artestexe"><button class="btn btn-info active">Run</button></p>
+          <div class="arload">
+    </div>
+      </div>
+    </div>
+                {% endif %}
+
+    </div>
+    </div>
+
+
+    </div>
+    <div class="col-sm-4">
+                  <div class="media">
+    <div class="media-left media-top">
+      <img src="{% static "images/Astronaut.png" %}" class="media-object" style="width:80px">
+    </div>
+    <div class="media-body">
+      <h5 class="media-heading">INFO TAG</h5>
+      <blockquote>
+          <p style="font-family:'Nanum Gothic';font-size: 13px">API testing with different rating factors<br>
+              API Requests are processed at the gateway and produces the following:</p>
+        <p style="font-family:'Courier New';font-size: 14px">- Automated Test flow logs with request and response<br>
+        - Test Report</p></blockquote>
+
+         </div>
+  </div>
+
+
+    </div>
+    </div>
+    </div>
+
+<!------------------------ EXECUTION MANAGER ------------------------------>
+    <script>
+
+$(document).ready(function() {
+
+    var hclwrap = $(".hcload");
+    var mvlwrap = $(".mvload");
+    var arlwrap = $(".arload");
+
+    var hcteststart = $(".hctestexe");
+    var hcretest = $(".hcretestexe");
+
+    var arteststart = $(".artestexe");
+    var arretest = $(".arretestexe");
+
+    var mvteststart = $(".mvtestexe");
+    var mvretest = $(".mvretestexe");
+
+    var exestat = $(".exestat");
+
+        $(hcteststart).click(function(e){
+                $(hcteststart).hide();
+                        e.preventDefault();
+                          $(hclwrap).append('<div class="col-sm-8">\n' +
+                              '<div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress.........' +
+                              '</div>' +
+                              '</div></div>');
+                                  document.location.href="{% url "asset_homecontent_suite" %}"
+
+        });
+
+        $(hcretest).click(function(e){
+                $(hcretest).hide();
+                $(exestat).hide();
+                        e.preventDefault();
+                          $(hclwrap).append('<div class="col-sm-8"><div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress...' +
+                              '</div></div></div>');
+                                  document.location.href="{% url "asset_homecontent_suite" %}"
+
+        });
+
+
+        $(arteststart).click(function(e){
+                $(arteststart).hide();
+                        e.preventDefault();
+                          $(arlwrap).append('<div class="col-sm-8">\n' +
+                              '<div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress.........' +
+                              '</div>' +
+                              '</div></div>');
+                                  document.location.href="{% url "asset_allrisk_suite" %}"
+
+        });
+
+        $(arretest).click(function(e){
+                $(arretest).hide();
+                $(exestat).hide();
+                        e.preventDefault();
+                          $(arlwrap).append('<div class="col-sm-8"><div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress...' +
+                              '</div></div></div>');
+                                  document.location.href="{% url "asset_allrisk_suite" %}"
+
+        });
+
+        $(mvteststart).click(function(e){
+                $(mvteststart).hide();
+                        e.preventDefault();
+                          $(mvlwrap).append('<div class="col-sm-8">\n' +
+                              '<div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress.........' +
+                              '</div>' +
+                              '</div></div>');
+                                  document.location.href="{% url "asset_vehicle_suite" %}"
+
+        });
+
+        $(mvretest).click(function(e){
+                $(mvretest).hide();
+                $(exestat).hide();
+                        e.preventDefault();
+                          $(mvlwrap).append('<div class="col-sm-8"><div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress...' +
+                              '</div></div></div>');
+                                  document.location.href="{% url "asset_vehicle_suite" %}"
+
+        });
+
+
+
+    });
+
+</script>
+
+{% endblock %}

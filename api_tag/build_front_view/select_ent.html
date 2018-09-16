@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+   $(document).ready(function() {
+        var max_fields       = 1;
+        var wrapper1         = $(".showmotorcontainer");
+        var wrapper2         = $(".container2");
+
+        var show_motor      = $(".showmotor");
+        var add_building     = $(".button2");
+        var add_content      = $(".add_content_field");
+
+
+        var x = 1;
+        $(show_motor).change(function(e){
+             e.preventDefault();
+             if(x <= max_fields) {
+                 x++;
+                 $(wrapper1).append('<div class="row"><div class="form-group">\n\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                     '  <select class="form-control" id="sel1" name="vehicles">\n' +
+                     '  <option>Select a vehicle:</option>\n' +
+                     '    <option value="hnd">HONDA  BRIO - 1.2 - COMFORT</option>\n' +
+                     '    <option value="tyt">TOYOTA  ETIOS - 1.5 - SPORT - LTD -EDITION - 5DR</option>\n' +
+                     '    <option value="vlk">VOLKSWAGEN  POLO - GTi - 1.8 - TSI</option>\n' +
+                     '    <option value="frd">FORD  FIGO - 1.5Ti - VCT - TREND (5DR)</option>\n' +
+                     '  </select></p></div>\n' +
+                     '</div>' +
+                     '<br><a href="#" class="delete"><button>remove</button></a></div></div>'); //add input box
+             }
+        else
+            {
+            alert('Note this is a Single Entity selection. You cannot have more than one product')
+             }
+        });
+
+        $(add_building).click(function(e){
+            e.preventDefault();
+            if(x < max_fields){
+                x++;
+                $(wrapper2).append('<div class="row"><div class="form-group">\n' +
+                    '      <input type="building" class="form-control" id="building" placeholder="Enter name of the building" name="building">\n' +
+                    '  <a href="#" class="delete"> delete </a></div></div>'); //add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+             }
+        });
+
+        $(wrapper1).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+          $(wrapper2).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+   </script>
+
+
+
+<style>
+    .selen_button {
+    background-color: #4563af; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.selen_button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6">
+    <div class="well">
+        <p style="color: #2557b4;font-size: 18px">Select your method for asset quote : <span class="glyphicon glyphicon-hand-right"></span></p>
+    </div>
+</div>
+
+<div class="col-sm-4">
+<div class="list-group">
+<p class="list-group-item"><button class="button selen_button" data-toggle="modal" data-target="#myModal">Single entity</button></p>
+<p class="list-group-item"><button class="button selen_button" data-toggle="modal" data-target="#myModal">Multiple entities</button></p>
+</div>
+</div>
+</div>
+<br><br>
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choose your product: < pick up random ></h4>
+        </div>
+        <div class="modal-body">
+    <div class="list-group">
+        <div class="showmotorcontainer">
+       <div class="checkbox">  <div class="list-group-item">
+        <label><input class="showmotor" type="checkbox" value="Motor">Motor Vehicle</label>
+    </div>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+        <label><input type="checkbox" value="Content">Home Content</label>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+    <label><input type="checkbox" value="">Building</label>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#NEXT">NEXT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>

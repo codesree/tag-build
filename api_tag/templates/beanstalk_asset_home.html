@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{% load static %}
+{% block body_block %}
+
+     <div class="container-fluid bg-2 text-left">
+   <div class="well well-lg"> <h3 style="color: darkslateblue">Beanstalk Asset Manager - API quoting</h3></div>
+</div>
+<div class="container">
+<div class="col-sm-6">
+    <div class="well">
+        <p style="color: #2557b4;font-size: 18px">Select your method for asset quote : <span class="glyphicon glyphicon-hand-right"></span></p>
+    </div>
+</div>
+
+<div class="col-sm-4">
+<div class="list-group">
+<p class="list-group-item"><button class="button btn btn-primary btn-block" data-toggle="modal" data-target="#singlent_modal">Single entity</button></p>
+<p class="list-group-item"><button class="button btn btn-primary btn-block" data-toggle="modal" data-target="#multient_modal ">Multiple entities</button></p>
+</div>
+</div>
+</div>
+<br>
+    {% if asset_error %}
+       <div class="well"><h4 style="font-family:'Courier New'"><span class="glyphicon glyphicon-alert"></span> ERROR!! <mark>{{ asset_error }}</mark></h4></div>
+{% endif %}
+    <br>
+
+
+  <div class="modal fade" id="multient_modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Multiple entities product selection: Add your products </h4>
+        </div>
+        <div class="modal-body">
+  <!--<div class="list-group">
+       <div class="checkbox">  <div class="list-group-item">
+        <label><input type="checkbox" value="Motor">Motor Vehicle</label>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+        <label><input type="checkbox" value="Content">Home Content</label>
+    </div>
+    </div>
+    <div class="checkbox"><div class="list-group-item">
+    <label><input type="checkbox" value="">Allrisks</label>
+    </div>
+    </div>
+</div> -->
+
+  <div class="container">
+    <form method = 'POST' action="{% url 'beanstalk_asset_home' %}">
+                   {% csrf_token %}
+    <div class="col-sm-3">
+        <div class="well">
+        <p style="color: #2557b4;font-size: 15px">Click Submit for Beanstalk to process your collection:</p>
+              <div class="form-group">
+           <input type="submit" class="form-control btn btn-primary btn-block" name="" value="Submit"></div>
+    </div>
+        </div>
+
+    <div class="col-sm-6">
+        <div class="well">
+            <p class="m_vehicles"><button class="button1" style="vertical-align:middle"><span>Add Vehicle</span></button></p>
+        <div class="container1">
+        </div>
+<br>
+            <p class="m_contents"><button class="button1" style="vertical-align:middle"><span>Add Homecontents</span></button></p><br>
+            <div class="container2"></div>
+        <br>
+        <p class="m_allrisks"><button class="button1" style="vertical-align:middle"><span>Add Allrisks</span></button></p><br>
+        <div class="container3">
+        </div>
+
+        </div>
+
+        </div>
+    </div>
+        </form>
+      </div>
+   <!-- <div class="col-sm-2">
+        <div class="well">
+            <div class="form-group">
+           <input type="submit" class="form-control selen_button" name="" value="Proceed"></div>
+        </div>
+    </div>-->
+    <div class="modal-footer">
+    </div>
+      </div> </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="singlent_modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Single entity product selection: </h4>
+        </div>
+                  <div class="modal-body">
+    <form method = 'POST' action="{% url 'beanstalk_asset_home' %}">
+                   {% csrf_token %}
+    <ul class="list-group">
+    <li class="list-group-item">
+        <div class="showmotorcontainer">
+            <button class="showmotor btn btn-default btn-block" type="button">Motor Vehicle - Select</button>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="showcontentcontainer">
+            <button class="showcontent btn btn-default btn-block" type="button">Home Content - Select</button>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="showAllriskscontainer">
+            <button class="showallrisks btn btn-default btn-block" type="button"> Allrisks - Select </button>
+    </div>
+    </li>
+    </ul>
+
+        <div class="form-group">
+           <input type="submit" class="form-control selen_button" name="" value="Submit"></div>
+        </form>
+        <div class="modal-footer">
+    </div>
+
+    </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+

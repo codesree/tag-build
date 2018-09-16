@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+<head>
+    <title>Test Access Gateway - API GATEWAY testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css" media="screen">
+    #editor {
+        height: 600px;
+    }
+    #editor2 {
+        height: 600px;
+    }
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style src="/Users/isree/PycharmProjects/tag-build/api_tab/build_front_view/tag_style" type="text/scss">
+    </style>
+
+</head>
+{% load static %}
+{% block body_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                <br>
+                <div class="panel panel-info">
+                     <div class="panel-heading">View policy API call -<mark>Before Amendment</mark></div>
+                   <div class="panel-body">
+                    <div id="editor">
+                        {{ bview_data }}
+                    </div>
+                   </div>
+                </div>
+            </div>
+<div class="col-md-6">
+    <br>
+            <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   View policy API call -<mark>After Amendment</mark></div>
+                   <div class="panel-body">
+                    <div id="editor2">
+                        {{ aview_data }}
+                    </div>
+                    </div>
+                    </div>
+            </div>
+    </div>
+        </div>
+</div>
+{% endblock %}
+
+
+
+<script src="/Users/isree/PycharmProjects/tag-build/api_tab/static/src_noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+     var textarea = $('#content');
+
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2");
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+</script>
+</body>
+</html>
+
+

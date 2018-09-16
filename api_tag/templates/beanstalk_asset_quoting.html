@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+  <head>
+    <title>Test Application Gateway - T A G</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-wfidth, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css" media="screen">
+    #editor {
+        height: 350px;
+    }
+    #editor2 {
+        height: 350px;
+    }
+
+  </style></head>
+{% load static %}
+{% block body_block %}
+<script>
+/*
+$(document).ready(function() {
+
+    var submitcrq = $(".crpost")
+    var loadwrap  = $(".loadman")
+
+    $("#crpost").click(function(e){
+                $(submitcrq).hide();
+                        e.preventDefault();
+                          $(loadwrap).append('<div class="progress"><div class="progress-bar progress-bar-striped active"' +
+                              ' role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">Execution in progress.........' +
+                              '</div>' +
+                              '</div>');
+                        $('#runner').submit();
+        });
+})
+*/
+</script>
+
+
+<div class="container">
+            <br>
+            <div class="row">
+                <div class="panel panel-info">
+                    {% if pantit == "crq" %}
+                        <div class="panel-heading">
+                       API Request - <kbd>CREATE QUOTE</kbd><div class="loadman"></div>
+                        </div>
+                    {% elif pantit == "acq" %}
+                    <div class="panel-heading">API Request - <kbd>ACCEPT QUOTE</kbd></div>
+                    {% elif pantit == "ctp" %}
+                    <div class="panel-heading">API Request - <kbd>CONVERT QUOTE TO POLICY</kbd></div>
+                    {% else %}
+                    {% endif %}
+                {% if go_conv == 'go' %}
+                    <div class="panel-body">
+                    <div class="col-sm-8">
+                              <form id="runner" method = 'POST' action="{% url "asset_execution" %}">
+                           {% csrf_token %}
+                                  <div class="form-group">
+                    <textarea name="convtop" id="convtop" hidden="hidden" value="convtop">{{ dispq }}</textarea>
+                           </div>
+                    <h4>Quote number - <code>{{ dispq }}</code> -<span class="glyphicon glyphicon-floppy-open"></span></h4>
+                    <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="ctpost" id="ctpost"
+                           value="CONVERT TO POLICY" ></form>
+                    </div>
+                    </div>
+                {% elif go_conv == 'complete' %}
+                    <div class="panel-body">
+                    <div class="col-sm-8">
+                    <h4>Quote number - <code>{{ dispq }}</code></h4>
+                      <div class="alert alert-success">
+                        <strong>Success!</strong> Your policy is now confirmed
+                      </div>
+                    </div><br>
+                        <div class="col-sm-8">
+                    <a href="{% url 'beanstalk_asset_home' %}"><button class="btn btn-primary btn-sm btn-block">Return to Asset Menu</button></a>
+                    </div>
+                    </div>
+
+                {% else %}
+                   <div class="panel-body">
+                                        <div id="editor">{{Req_data}}
+                    </div>
+                               <form id="runner" method = 'POST' action="{% url "asset_execution" %}">
+           {% csrf_token %}
+           <div class="form-group">
+                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
+                           </div>
+           <!-- checkpoint execute/proceed - accept/convert to policy -->
+           {% if pantit == 'crq'%}
+          <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="crpost" id="crpost"
+             value="PROCEED WITH CREATE QUOTE">
+           {% elif pantit == 'acq' %}
+          <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="acpost" id="acpost"
+             value="PROCEED WITH ACCEPT QUOTE">
+           {% else %}
+           {% endif %}
+      </form>
+                </div>
+                    {% endif %}
+</div>
+            </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row">
+            <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+            <ul class="list-group">
+                                     {% if dispq %}
+                                 <li class="list-group-item list-group-item-info">Quote number <kbd>{{dispq}}</kbd></li>
+                                        {% if pantit == 'crq' or pantit == 'acq' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..We have created the Insurance Quote for your assets !!!</mark></li>
+                                            <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="button" class="btn btn-danger btn-sm"> Download </button> </a></li>
+                                        {% elif pantit == 'ctp' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..your Insurance Quote has been accepted by our API gateway</mark></li>
+                                            <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="button" class="btn btn-danger btn-sm"> Download </button> </a></li>
+                                        {% else %}
+                                        {% endif %}
+                                     {% elif dispp %}
+                                 <li class="list-group-item list-group-item-info">Policy number <kbd>{{dispp}}</kbd></li>
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..your Policy is now confirmed</mark></li>
+                                <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="button" class="btn btn-danger btn-sm"> Download </button> </a></li>
+
+                                     {% else %}
+                                     {% endif %}
+                                     {% if stat == 'success' %}
+                                 <li class="list-group-item list-group-item-info">Status: <p class="text-success">Success</p></li>
+                                     {% elif stat == 'fail' %}
+                                 <li class="list-group-item list-group-item-danger">Status: <code>Failed</code></li>
+                                 <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="buton"  class="btn btn-primary btn-sm"> Download </button> </a></li>
+                                 {% else %}
+                                 {% endif %}
+            </ul>
+        </div>
+                     <div class="col-md-8">
+                             <div id="editor2">{{ Resp_data }}</div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
+</script>
+<script>
+
+    {% if go_conv == 'go' or go_conv == 'complete' %}
+   var editor2 = ace.edit("editor2");
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+    {% else %}
+   var textarea = $('#content');
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2");
+
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+
+    {% endif %}
+</script>
+
+
+{% endblock %}
+

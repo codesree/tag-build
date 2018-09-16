@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor {
+        height: 350px;
+    }
+    #editor2 {
+        height: 350px;
+    }
+</style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">T A G</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Beanstalk API</a></li>
+        <li><a href="#">Quote</a></li>
+        <li><a href="#">Policy</a></li>
+        <li><a href="#">Claim</a></li>
+         </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+   <ul class="nav nav-pills nav-justified">
+       <li class="active"><a href="#">CREATE QUOTE</a></li>
+    <li><a href="#">ACCEPT QUOTE</a></li>
+    <li><a href="#">CONVERT QUOTE TO POLICY</a></li>
+  </ul>
+
+            <br>
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        API request</div>
+                   <div class="panel-body">
+       </div>
+       </div>
+            </div>
+</div>
+
+<div class ="container">
+    <div class="row">
+         <div class="panel panel-info">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+  <table class="table-condensed">
+    <thead>
+       </thead>
+    <tbody>
+      <tr>
+        <td>Policy number</td>
+          <td><button class="btn btn-info">SHL000009156</button></td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td><button class="btn btn-success">Success</button></td>
+      </tr>
+      <tr>
+        <td>Error</td>
+        <td>data</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+                <div class="col-md-8">
+                    <div id="editor2">"ThirdPartyDetails": [
+        {
+          "ThirdPartyDetailsId": "92e60929-2e81-42d0-ae59-622ca829a06a",
+          "VehicleDetails": {
+            "MMCode": "string",
+            "Make": "HONDA",
+            "Model": "BRIO 1.2 COMFORT",
+            "Year": "2014",
+            "Color": "green",
+            "RegistrationNo": "12345"
+          },
+          "InsuranceCompany": "string",
+          "PersonId": "2a971e2e-47fb-4f63-b515-71eb9fa0819d"
+        }
+      ]</div>
+</div>
+            </div></div>
+</div></div>
+
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+    document.getElementById('editor2').style.fontSize='14px';
+
+</script>
+
+<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+     var textarea = $('#content');
+   var editor2 = ace.edit("editor2");
+
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+
+   textarea.val(editor.getSession().getValue());
+
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+
+   $("#alertconte   nt-btn").on('click', function () {
+       alert(textarea.val());
+   });
+</script>
+</body>
+</html>
+
+

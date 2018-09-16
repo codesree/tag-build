@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="icon" type="image/png" href="{% static "images/download.png" %}">
+        <title>TEST APPLICATION GATEWAY - API GATEWAY for testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script>
+   $(document).ready(function() {
+        var max_fields      = 5;
+        var show_max_fields = 1;
+        var wrapper1         = $(".container1");
+        var wrapper2         = $(".container2");
+        var wrapper3         = $(".container3");
+
+        var show_wrapper1    = $(".showmotorcontainer");
+        var show_wrapper2    = $(".showcontentcontainer");
+        var show_wrapper3    = $(".showAllriskscontainer")
+
+
+        var add_vehicle      = $(".m_vehicles");
+        var add_homecontents = $(".m_contents");
+        var add_allrisks     = $(".m_allrisks");
+
+        var show_motor       = $(".showmotor");
+        var show_content     = $(".showcontent");
+        var show_allrisks    = $(".showallrisks")
+
+        var add_content      = $(".add_content_field");
+
+        var w1 = 1;
+        var w2 = 1;
+        var w3 = 1;
+        $(show_motor).click(function(e){
+             e.preventDefault();
+             if(w1 <= show_max_fields) {
+                 w1++;
+                 $(show_wrapper1).append('<div class="row"><div class="form-group">\n\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                     '  <select class="form-control" id="motor[]" name="motor[]">\n' +
+                     '  <option>Select a vehicle:</option>\n' +
+                     '    <option value="BANTAM 1.3i P/U S/C">FORD BANTAM 1.3i P/U S/C</option>\n' +
+                     '    <option value="KUGA 1.5 ECOBOOST AMBIENTE">FORD KUGA 1.5 ECOBOOST AMBIENTE</option>\n' +
+                     '    <option value="MUSTANG 2.3 ECOBOOST">FORD MUSTANG 2.3 ECOBOOST</option>\n' +
+                     '    <option value="GRAND i10 1.25 FLUID">HYUNDAI GRAND i10 1.25 FLUID</option>\n' +
+                     '  </select></p></div>\n' +
+                     '</div>' +
+                     '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>'); //add input box
+             }
+        else
+            {
+            alert('Note this is a Single Entity selection. You cannot have more than one product')
+             }
+        });
+
+       $(show_content).click(function(e){
+            e.preventDefault();
+            if(w2 <= show_max_fields){
+                w2++;
+                $(show_wrapper2).append('<div class="row"><div class="form-group">\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                    '<input type="text" class="form-control" id="content[]" placeholder="Please enter the name for Home Content" name="content[]"></p></div>\n' +
+                    '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>'); //add input box
+            }
+            else
+            {
+          alert('Note this is a Single Entity selection. You cannot have more than one product')             }
+        });
+
+
+       $(show_allrisks).click(function(e){
+            e.preventDefault();
+            if(w3 <= show_max_fields){
+                w3++;
+                $(show_wrapper3).append('<div class="row"><div class="form-group">\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                    '<input type="text" class="form-control" id="allrisk[]" placeholder="Please enter the name to identify your Risk" name="allrisk[]"></p></div>\n' +
+                    '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>'); //add input box
+            }
+            else
+            {
+          alert('Note this is a Single Entity selection. You cannot have more than one product')             }
+        });
+
+
+        var x1 = 1;
+        var x2 = 1;
+        var x3 = 1;
+
+
+        $(add_vehicle).click(function(e){
+            e.preventDefault();
+            if(x1 < max_fields){
+                x1++;
+                $(wrapper1).append('<div class="row"><div class="form-group">\n\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                     '  <select class="form-control" id="motor[]" name="motor[]">\n' +
+                     '  <option>Select a vehicle:</option>\n' +
+                          '    <option value="BANTAM 1.3i P/U S/C">FORD BANTAM 1.3i P/U S/C</option>\n' +
+                     '    <option value="KUGA 1.5 ECOBOOST AMBIENTE">FORD KUGA 1.5 ECOBOOST AMBIENTE</option>\n' +
+                     '    <option value="MUSTANG 2.3 ECOBOOST">FORD MUSTANG 2.3 ECOBOOST</option>\n' +
+                     '    <option value="GRAND i10 1.25 FLUID">HYUNDAI GRAND i10 1.25 FLUID</option>\n' +
+                     '  </select></p></div>\n' +
+                     '</div>' +
+                     '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>');//add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+            }
+        });
+        $(add_homecontents).click(function(e){
+            e.preventDefault();
+            if(x2 < max_fields){
+                x2++;
+                $(wrapper2).append('<div class="row"><div class="form-group">\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                    '<input type="text" class="form-control" id="content[]" placeholder="Please enter the name of the Home Content" name="content[]"></p></div>\n' +
+                    '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>'); //add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+             }
+        });
+
+       $(add_allrisks).click(function(e){
+            e.preventDefault();
+            if(x3 < max_fields){
+                x3++;
+                $(wrapper3).append('<div class="row"><div class="form-group">\n' +
+                     '<div class="list-group">\n' +
+                     '<div class="col-sm-8">\n'+
+                     '<p class=list-group-item>\n' +
+                    '<input type="text" class="form-control" id="allrisk[]" placeholder="Please enter the name to identify your Risk" name="allrisk[]"></p></div>\n' +
+                    '<br><a href="#" class="delete"><button type="button" class="btn btn-danger btn-xs">remove</button></a></div></div>'); //add input box
+            }
+            else
+            {
+            alert('You Reached the limits')
+             }
+        });
+
+        $(wrapper1).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x1--;
+        })
+        $(wrapper2).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x2--;
+        })
+        $(wrapper3).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x3--;
+        })
+        $(show_wrapper1).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); w1--;
+        })
+        $(show_wrapper2).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); w2--;
+        })
+        $(show_wrapper3).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); w3--;
+        })
+    });
+
+   function loadfunc() {
+    myVar = setTimeout(showPage, 500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("main-page").style.display = "block";
+}
+
+
+   </script>
+<style>
+/********** Loader styles ***************/
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #2469e9;
+  width: 90px;
+  height: 90px;
+  -webkit-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+/************* Loader style ends here *************/
+
+#editor {
+        height: 350px;
+}
+
+#editor2 {
+        height: 350px;
+    }
+.jumbotron {
+  text-shadow: #444444 0 3px 3px;
+  background-color: #ebe9e7;
+    border-spacing: 12px;
+    height: 500px;
+}
+ .button1 {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  background-color: #4563af;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+.button2 {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  background-color: #4563af;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button1:hover span {
+  padding-right: 25px;
+}
+.button2:hover span {
+  padding-right: 25px;
+}
+.button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+    .selen_button {
+    background-color: #4563af; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.selen_button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+    .beantitle {
+  color: #45768b;
+  text-shadow: 0 1px 0 #ccc,
+               0 1px 0 #c9c9c9,
+               0 1px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+
+}
+
+  .startb  {
+    background-color: #4563af; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+        .startb:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
+</head>
+<body onload="loadfunc()" style="margin:0;">
+
+<div id="loader"></div>
+<div class="container" id="main-page" class="animate-bottom">
+          {% if user.is_authenticated %}
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <ul>
+     <li class="active"><a class="navbar-brand" href="#" style="color:sandybrown">T A G </a></li>
+     </ul>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'tag_home' %}">Dashboard
+      </a></li>
+      <li><a href="{% url 'beanstalk_home' %}">Beanstalk API</a></li>
+      <li><a href="{% url 'test_chamber_home' %}">Test chamber</a></li>
+      <li><a href="#">Build engine</a></li>
+            <li><a href="{% url 'tag_user_logout' %}">Logout</a> </li>
+
+    </ul>
+  </div>
+</nav>
+            {% endif %}
+    </div>
+<br>
+<div class="row">
+ <div class="container">
+ {% block body_block %}
+          <meta http-equiv="refresh" content="10" />
+
+            <div class="col-sm-3">
+                <img width="200" height="200" src="{% static "images/group-logo-small.svg" %}"/>
+            </div>
+            <div class="col-sm-8">
+                <br>
+                <h3 style="font-family:'Courier New';color:darkblue">{{ text }}</h3>
+                <br>
+                <div class="row">
+    <div class="col-sm-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">QUOTES API
+      </div>
+      <div class="panel-body">
+            <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                H E A L T H Y
+            </div>
+  </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-4">
+
+                    <div class="panel panel-danger">
+      <div class="panel-heading">POLICY API
+      </div>
+      <div class="panel-body">            <div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                U N H E A L T H Y
+            </div></div>
+    </div>
+            </div>
+    </div></div>
+
+          <div class="row">
+    <div class="col-sm-4">
+    <div class="panel panel-danger">
+      <div class="panel-heading">SYNC STATUS</div>
+      <div class="panel-body">
+           <div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                F A I L
+            </div></div>
+      </div>
+    </div></div>
+    <div class="col-sm-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">SYNC SERVICES</div>
+      <div class="panel-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                R U N N I N G
+            </div></div>
+      </div>
+    </div></div></div>
+
+
+                 </div>
+        </div>
+
+  {% endblock %}
+</div>
+</div>
+
+</body>
+</html>

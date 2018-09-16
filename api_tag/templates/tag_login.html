@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+{% load static %}
+<head>
+ <title>Test Access Gateway - API GATEWAY testing</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+{% block body_block %}
+    <!--<div class="bg"></div>-->
+    <div class="container">
+
+    <div class="jumbotron">
+      <div class="row">
+    <h3 class="beantitle">TEST AUTOMATION - API GATEWAY
+        - SIL/LIBERTY</h3>
+        <br>
+          <h4 style="color:#4563af;">---< Automated API Ops >---</h4>
+        <br>
+           <div class="col-sm-4">
+        <img width="200" height="200" src="{% static "images/group-logo-small.svg" %}"/>
+    </div>
+
+                <h3><span class="label label-default">Login</span></h3>
+    <form action="{% url 'tag_user_login' %}" method="post">
+     {% csrf_token %}
+        <div class="col-sm-6">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type="text" class="form-control" name="username" placeholder="User name">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+        </div>
+    <div class="input-group">
+    <input type="submit" class="form-control btn btn-primary" name="" value="Sign-in">
+    </div>
+    </form>
+    </div>
+          </div>
+    </div>
+            {% if eresp %}
+        <div class="well well-sm"><code>{{ eresp }}</code></div>
+        {% endif %}
+        </div>
+
+{% endblock %}
