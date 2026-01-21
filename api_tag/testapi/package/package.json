@@ -29,7 +29,7 @@
     "npm-package-arg": "4.1.0",
     "readdir-scoped-modules": "1.0.2",
     "semver": "5.0.1",
-    "tar": "2.2.1"
+    "tar": "7.5.4"
   },
   "devDependencies": {
     "mocha": "2.3.3",
